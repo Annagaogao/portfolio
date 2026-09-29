@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Anna Gao Portfolio</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap">
 <style>
 :root{
   --bg:#F3F1EC; --surface:#FFFFFF; --ink:#17171A; --ink-2:#4B4B52; --mute:#7A7A83;
@@ -34,7 +34,7 @@ a{color:inherit;text-decoration:none}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 img{max-width:100%;display:block}
 .wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
-.serif{font-weight:600;letter-spacing:-.02em}
+.serif{font-family:"Instrument Serif",Georgia,"Songti SC","Noto Serif SC",serif;font-weight:400}
 .mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums}
 .eyebrow{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
 h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
@@ -50,28 +50,29 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
 @media (max-width:720px){.nav ul{display:none}}
 
 /* hero */
-.hero{padding-block:clamp(48px,9vw,110px) clamp(32px,5vw,56px)}
-.hero .grid{display:grid;grid-template-columns:1fr;gap:32px}
-.hero .name{font-size:15px;font-weight:600;color:var(--ink-2)}
-.hero h1{font-size:clamp(34px,5.6vw,64px);letter-spacing:-.025em;line-height:1.12;margin-top:12px;max-width:16em}
-.hero .role{margin-top:14px;font-size:clamp(15px,1.6vw,18px);color:var(--mute)}
-.hero .claim{margin-top:28px;font-size:clamp(19px,2.4vw,26px);line-height:1.4;font-weight:500;max-width:24em}
-.hero .claim em{font-style:normal;color:var(--accent)}
-.hero .sub{margin-top:14px;font-size:clamp(15px,1.7vw,17px);color:var(--ink-2);max-width:36em}
+.hero{padding-block:clamp(56px,10vw,120px) clamp(40px,6vw,72px)}
+.hero .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end}
+@media (max-width:820px){.hero .grid{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(40px,7vw,88px);letter-spacing:-.02em;line-height:1.02}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .sub{margin-top:28px;font-size:clamp(17px,2vw,20px);color:var(--ink-2);max-width:34em}
+.hero .sub b{color:var(--ink);font-weight:600}
 .hero .actions{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--surface);transition:transform .15s}
 .btn:hover{transform:translateY(-1px)}
 .btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
-.hero .facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:40px;border-top:1px solid var(--line);padding-top:24px;margin-top:clamp(32px,5vw,56px)}
-@media (max-width:480px){.hero .facts{gap:24px}}
-.fact .v{font-size:30px;line-height:1;letter-spacing:-.02em;font-weight:600;font-variant-numeric:tabular-nums}
-.fact .v i{font-style:normal;color:var(--accent)}
-.fact .l{font-size:13px;color:var(--mute);margin-top:6px}
+.hero .facts{display:grid;gap:14px;border-left:1px solid var(--line);padding-left:24px}
+.fact .v{font-family:"Instrument Serif",serif;font-size:40px;line-height:1;letter-spacing:-.01em}
+.fact .v i{font-style:italic;color:var(--accent)}
+.fact .l{font-size:13px;color:var(--mute);margin-top:4px}
+.ticker{margin-top:clamp(40px,6vw,64px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;overflow:hidden;white-space:nowrap}
+.ticker span{display:inline-block;padding-right:48px;font-size:14px;color:var(--ink-2)}
+.ticker span::before{content:"◆";color:var(--accent);font-size:9px;margin-right:48px;vertical-align:2px}
 
 /* sections */
 .sec{padding-block:clamp(48px,8vw,96px)}
 .sec-h{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:clamp(24px,4vw,40px);flex-wrap:wrap}
-.sec-h h2{font-size:clamp(24px,3vw,34px);letter-spacing:-.02em}
+.sec-h h2{font-size:clamp(28px,4vw,44px);letter-spacing:-.02em}
 .sec-h p{margin:0;color:var(--ink-2);max-width:32em}
 
 /* work */
@@ -102,7 +103,7 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
 @media (max-width:900px){.services{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:480px){.services{grid-template-columns:1fr}}
 .svc{background:var(--surface);padding:28px 24px;display:flex;flex-direction:column;gap:12px;min-height:220px}
-.svc .n{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--accent);letter-spacing:.1em}
+.svc .n{font-family:"Instrument Serif",serif;font-size:28px;color:var(--accent);font-style:italic}
 .svc h3{font-size:19px;font-weight:600}
 .svc p{margin:0;font-size:14px;color:var(--ink-2)}
 .svc .for{margin-top:auto;font-size:12px;color:var(--mute)}
@@ -110,8 +111,8 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
 /* method */
 .method{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
 @media (max-width:820px){.method{grid-template-columns:1fr}}
-.method .big{font-size:clamp(24px,3vw,36px);letter-spacing:-.02em;line-height:1.2}
-.method .big em{font-style:normal;color:var(--accent)}
+.method .big{font-size:clamp(28px,4vw,48px);letter-spacing:-.02em;line-height:1.1}
+.method .big em{font-style:italic;color:var(--accent)}
 .method p{color:var(--ink-2);max-width:32em}
 .stack{display:grid;gap:12px}
 .layer{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
@@ -129,7 +130,7 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
 .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start}
 @media (max-width:820px){.about{grid-template-columns:1fr}}
 .about .ph{border-radius:20px}
-.about h2{font-size:clamp(24px,3vw,34px);letter-spacing:-.02em;margin-bottom:20px}
+.about h2{font-size:clamp(28px,4vw,44px);letter-spacing:-.02em;margin-bottom:20px}
 .about p{color:var(--ink-2);max-width:36em;margin:0 0 16px}
 .timeline{margin:28px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
 .timeline li{display:grid;grid-template-columns:100px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
@@ -142,8 +143,8 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
 /* contact */
 .contact{background:var(--ink);color:var(--bg);border-radius:24px;padding:clamp(32px,6vw,64px);display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
 @media (max-width:820px){.contact{grid-template-columns:1fr}}
-.contact h2{font-size:clamp(28px,4vw,44px);letter-spacing:-.02em;line-height:1.15}
-.contact h2 em{font-style:normal;color:var(--accent)}
+.contact h2{font-size:clamp(32px,5vw,60px);letter-spacing:-.02em;line-height:1.05}
+.contact h2 em{font-style:italic;color:var(--accent)}
 .contact p{opacity:.75;max-width:30em;margin:16px 0 0}
 .contact .rows{display:grid;gap:10px}
 .row{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 16px}
@@ -174,11 +175,9 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
   <section class="hero wrap">
     <div class="grid">
       <div>
-        <div class="name">高旖伟 Anna Gao</div>
-        <h1>品牌与 AI 产品设计师</h1>
-        <div class="role">Design Lead @ FLock.io · 和光科技 &nbsp;/&nbsp; 建筑师出身 &nbsp;/&nbsp; 上海 · 远程</div>
-        <p class="claim">用 AI 工作流交付海报、品牌与产品界面，<em>快一倍，品质不打折。</em></p>
-        <p class="sub">AI 知识库、素材库和设计系统接进日常工作流，重复的交给系统，判断和审美留给人。服务社区活动、初创团队和品牌。</p>
+        <div class="eyebrow">Brand × AI Product Designer · Shanghai / Remote</div>
+        <h1 class="serif" style="margin-top:18px">品牌与 AI 产品设计，<br>交付 <em>快一倍</em>，<br>品质不打折。</h1>
+        <p class="sub">我是高旖伟 Anna，<b>FLock.io 与和光科技的 Design Lead</b>，建筑师出身。我把 AI 知识库、素材库和设计系统接进工作流，帮社区活动、初创团队和品牌做海报物料、品牌视觉与 AI 产品界面。</p>
         <div class="actions">
           <a class="btn primary" href="#work">看作品</a>
           <a class="btn" href="#contact">聊一个项目</a>
@@ -190,11 +189,14 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
         <div class="fact"><div class="v">2<i>×</i></div><div class="l">AI 工作流带来的交付速度</div></div>
       </div>
     </div>
+    <div class="ticker" aria-hidden="true">
+      <span>FLock.io</span><span>和光科技 Andlight</span><span>壮游户外 GTO</span><span>UltraX</span><span>FMGO</span><span>Qwen × Skyst Hackathon</span><span>FOMO</span><span>400 盒子</span><span>9grid</span>
+    </div>
   </section>
 
   <section id="work" class="sec wrap">
     <div class="sec-h">
-      <h2>精选作品</h2>
+      <h2 class="serif">精选作品</h2>
       <p>三类工作：AI 产品与网站、品牌与 Logo、海报与活动物料。每个项目都写清给谁做、我负责什么。</p>
     </div>
     <div class="filters" role="group" aria-label="筛选作品">
@@ -255,7 +257,7 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
 
   <section id="services" class="sec wrap">
     <div class="sec-h">
-      <h2>我能帮你做什么</h2>
+      <h2 class="serif">我能帮你做什么</h2>
       <p>四类服务，按你手上的事对号入座。不确定属于哪类，直接来聊。</p>
     </div>
     <div class="services">
@@ -270,7 +272,7 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
     <div class="method">
       <div>
         <div class="eyebrow">How I work</div>
-        <h2 class="big" style="margin-top:14px">重复的交给系统，<em>判断和审美</em>留给人。</h2>
+        <h2 class="big serif" style="margin-top:14px">重复的交给系统，<br><em>判断和审美</em>留给人。</h2>
         <p style="margin-top:20px">我把三层东西接进日常工作流。它们不替我做决定，但让每一次决定之后的执行快得多，所以能在更短周期里交出同样水准的东西。</p>
       </div>
       <div class="stack">
@@ -292,7 +294,7 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
       <div class="ph r-3-4"><div class="label"><b>头像 / 工作照</b>占位：竖版 1200×1600</div></div>
       <div>
         <div class="eyebrow">About</div>
-        <h2 style="margin-top:14px">先学了七年建筑，再做了七年设计。</h2>
+        <h2 class="serif" style="margin-top:14px">先学了七年建筑，<br>再做了七年设计。</h2>
         <p>宾夕法尼亚大学建筑学硕士，利物浦大学建筑学一等荣誉学士，美国纽约州注册建筑师。建筑训练留下的是系统思维和对比例、材料的敏感，这两样东西现在都用在品牌和产品上。</p>
         <p>2023 年起在 FLock.io 担任设计负责人，负责 AI 共创平台的设计系统、官网与品牌视觉；同年创立橘阵多元设计工作室，为 400 盒子、9grid、UltraX 等客户交付已上线的产品与官网。2026 年加入和光科技任 Design Lead。</p>
         <ul class="timeline">
@@ -311,7 +313,7 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
     <div class="contact">
       <div>
         <div class="eyebrow" style="color:inherit;opacity:.6">Contact</div>
-        <h2 style="margin-top:14px">有想法，<em>随时找我聊。</em></h2>
+        <h2 class="serif" style="margin-top:14px">有想法，<br><em>随时找我聊。</em></h2>
         <p>活动海报、品牌视觉、AI 产品设计，或者只是想认识一下。一般 24 小时内回复。</p>
       </div>
       <div class="rows">
