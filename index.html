@@ -4,20 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Anna Gao Portfolio</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Serif+SC:wght@400;500&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap">
 <style>
 :root{
   --bg:#F3F1EC; --surface:#FFFFFF; --ink:#17171A; --ink-2:#4B4B52; --mute:#7A7A83;
   --line:#D9D6CE; --line-2:#E8E5DE; --accent:#2447F5; --accent-ink:#FFFFFF; --tint:#E3E8FF;
   --hatch:repeating-linear-gradient(135deg,transparent 0 10px,rgba(23,23,26,.06) 10px 11px);
-  --shadow:0 1px 0 rgba(23,23,26,.04),0 12px 32px -20px rgba(23,23,26,.25);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#121214; --surface:#1B1B1F; --ink:#EDEBE6; --ink-2:#B9B7B1; --mute:#84838C;
     --line:#2E2E34; --line-2:#26262B; --accent:#7C93FF; --accent-ink:#0E1330; --tint:#1F2547;
     --hatch:repeating-linear-gradient(135deg,transparent 0 10px,rgba(237,235,230,.07) 10px 11px);
-    --shadow:0 1px 0 rgba(0,0,0,.3),0 12px 32px -20px rgba(0,0,0,.6);
     color-scheme:dark;
   }
 }
@@ -25,7 +23,6 @@
   --bg:#121214; --surface:#1B1B1F; --ink:#EDEBE6; --ink-2:#B9B7B1; --mute:#84838C;
   --line:#2E2E34; --line-2:#26262B; --accent:#7C93FF; --accent-ink:#0E1330; --tint:#1F2547;
   --hatch:repeating-linear-gradient(135deg,transparent 0 10px,rgba(237,235,230,.07) 10px 11px);
-  --shadow:0 1px 0 rgba(0,0,0,.3),0 12px 32px -20px rgba(0,0,0,.6);
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -34,8 +31,8 @@ a{color:inherit;text-decoration:none}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 img{max-width:100%;display:block}
 .wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
-.serif{font-family:"Instrument Serif",Georgia,"Songti SC","Noto Serif SC",serif;font-weight:400}
-.mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums}
+.serif{font-family:"Instrument Serif","Noto Serif SC","Songti SC",Georgia,serif;font-weight:400}
+.serif em{font-style:italic;color:var(--accent)}
 .eyebrow{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
 h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
 
@@ -49,106 +46,86 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
 .nav .cta{background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:999px;font-size:13px;font-weight:600}
 @media (max-width:720px){.nav ul{display:none}}
 
-/* hero */
-.hero{padding-block:clamp(56px,10vw,120px) clamp(40px,6vw,72px)}
-.hero .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end}
-@media (max-width:820px){.hero .grid{grid-template-columns:1fr}}
-.hero h1{font-size:clamp(40px,7vw,88px);letter-spacing:-.02em;line-height:1.02}
-.hero h1 em{font-style:italic;color:var(--accent)}
-.hero .sub{margin-top:28px;font-size:clamp(17px,2vw,20px);color:var(--ink-2);max-width:34em}
-.hero .sub b{color:var(--ink);font-weight:600}
-.hero .actions{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--surface);transition:transform .15s}
+/* hero: 3 levels only */
+.hero{padding-block:clamp(72px,14vw,160px) clamp(56px,8vw,96px)}
+.hero h1{font-size:clamp(44px,8vw,104px);letter-spacing:-.02em;line-height:1.04;max-width:12em}
+.hero .who{margin-top:clamp(24px,3vw,36px);font-size:clamp(15px,1.6vw,18px);color:var(--ink-2)}
+.hero .who b{color:var(--ink);font-weight:600}
+.hero .actions{margin-top:clamp(28px,4vw,44px);display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--surface);transition:transform .15s}
 .btn:hover{transform:translateY(-1px)}
 .btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
-.hero .facts{display:grid;gap:14px;border-left:1px solid var(--line);padding-left:24px}
-.fact .v{font-family:"Instrument Serif",serif;font-size:40px;line-height:1;letter-spacing:-.01em}
-.fact .v i{font-style:italic;color:var(--accent)}
-.fact .l{font-size:13px;color:var(--mute);margin-top:4px}
-.ticker{margin-top:clamp(40px,6vw,64px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;overflow:hidden;white-space:nowrap}
-.ticker span{display:inline-block;padding-right:48px;font-size:14px;color:var(--ink-2)}
-.ticker span::before{content:"◆";color:var(--accent);font-size:9px;margin-right:48px;vertical-align:2px}
 
 /* sections */
-.sec{padding-block:clamp(48px,8vw,96px)}
-.sec-h{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:clamp(24px,4vw,40px);flex-wrap:wrap}
-.sec-h h2{font-size:clamp(28px,4vw,44px);letter-spacing:-.02em}
-.sec-h p{margin:0;color:var(--ink-2);max-width:32em}
+.sec{padding-block:clamp(56px,9vw,112px);border-top:1px solid var(--line)}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:clamp(28px,4vw,48px)}
+.sec-h h2{font-size:clamp(34px,5vw,60px);letter-spacing:-.02em}
 
-/* work */
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+/* work: uniform grid */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:clamp(24px,3vw,36px)}
 .chip{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--ink-2);background:transparent;cursor:pointer;font-family:inherit}
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.works{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
-.work{grid-column:span 4;display:flex;flex-direction:column;gap:14px}
-.work.lg{grid-column:span 8}
-.work.md{grid-column:span 6}
-@media (max-width:900px){.work,.work.lg,.work.md{grid-column:span 6}}
-@media (max-width:560px){.work,.work.lg,.work.md{grid-column:span 12}}
-.ph{position:relative;width:100%;max-width:100%;border-radius:14px;background:var(--surface);background-image:var(--hatch);border:1px dashed var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;transition:transform .2s,box-shadow .2s}
-.work:hover .ph{transform:translateY(-3px);box-shadow:var(--shadow)}
-.ph .tag{position:absolute;left:12px;top:12px;font-size:11px;background:var(--bg);border:1px solid var(--line);padding:3px 8px;border-radius:999px;color:var(--mute)}
+.works{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(24px,4vw,48px) clamp(20px,3vw,32px)}
+@media (max-width:640px){.works{grid-template-columns:1fr}}
+.work{display:flex;flex-direction:column;gap:16px}
+.ph{position:relative;width:100%;max-width:100%;aspect-ratio:16/11;border-radius:12px;background:var(--surface);background-image:var(--hatch);border:1px dashed var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;transition:transform .2s}
+.work:hover .ph{transform:translateY(-3px)}
 .ph .label{font-size:13px;color:var(--mute);line-height:1.5}
 .ph .label b{display:block;color:var(--ink-2);font-weight:600}
-.r-16-10{aspect-ratio:16/10}.r-4-3{aspect-ratio:4/3}.r-1-1{aspect-ratio:1/1}.r-3-4{aspect-ratio:3/4}.r-21-9{aspect-ratio:21/9}
-.work .meta{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
-.work h3{font-size:18px;font-weight:600}
-.work .meta .k{font-size:12px;color:var(--mute);white-space:nowrap}
-.work p{margin:0;font-size:14px;color:var(--ink-2)}
-.work .link{font-size:13px;color:var(--accent);font-weight:600}
-.work .link::after{content:" ↗"}
+.work .meta{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+.work h3{font-size:20px;font-weight:600}
+.work .k{font-size:13px;color:var(--mute);white-space:nowrap}
+.work .k a{color:var(--accent);font-weight:600}
+.work .k a::after{content:" ↗"}
 
 /* services */
 .services{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
 @media (max-width:900px){.services{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:480px){.services{grid-template-columns:1fr}}
-.svc{background:var(--surface);padding:28px 24px;display:flex;flex-direction:column;gap:12px;min-height:220px}
-.svc .n{font-family:"Instrument Serif",serif;font-size:28px;color:var(--accent);font-style:italic}
-.svc h3{font-size:19px;font-weight:600}
-.svc p{margin:0;font-size:14px;color:var(--ink-2)}
-.svc .for{margin-top:auto;font-size:12px;color:var(--mute)}
+.svc{background:var(--surface);padding:32px 28px;display:flex;flex-direction:column;gap:14px;min-height:240px}
+.svc .n{font-family:"Instrument Serif",serif;font-style:italic;font-size:30px;line-height:1;color:var(--accent)}
+.svc h3{font-size:20px;font-weight:600}
+.svc p{margin:0;font-size:14.5px;color:var(--ink-2)}
+.svc .for{margin-top:auto;font-size:12.5px;color:var(--mute)}
 
 /* method */
-.method{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.method{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,64px);align-items:start}
 @media (max-width:820px){.method{grid-template-columns:1fr}}
-.method .big{font-size:clamp(28px,4vw,48px);letter-spacing:-.02em;line-height:1.1}
-.method .big em{font-style:italic;color:var(--accent)}
-.method p{color:var(--ink-2);max-width:32em}
+.method h2{font-size:clamp(34px,5vw,60px);letter-spacing:-.02em}
+.method p{color:var(--ink-2);max-width:30em;margin:20px 0 0}
 .stack{display:grid;gap:12px}
-.layer{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
-.layer .ic{width:44px;height:44px;border-radius:10px;background:var(--tint);color:var(--accent);display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-size:13px;font-weight:500}
-.layer b{display:block;font-weight:600;margin-bottom:2px}
+.layer{display:grid;grid-template-columns:48px 1fr;gap:18px;padding:22px 24px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.layer .ic{width:48px;height:48px;border-radius:10px;background:var(--tint);color:var(--accent);display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:500}
+.layer b{display:block;font-weight:600;margin-bottom:4px;font-size:16px}
 .layer span{font-size:14px;color:var(--ink-2)}
-.steps{margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:step}
+.steps{margin-top:clamp(40px,6vw,72px);display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:step}
 @media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
-.step{border-top:2px solid var(--ink);padding-top:16px}
-.step::before{counter-increment:step;content:"0" counter(step);font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--accent);letter-spacing:.1em}
-.step h4{margin:6px 0 4px;font-size:17px;font-weight:600}
+.step{border-top:1px solid var(--ink);padding-top:18px}
+.step::before{counter-increment:step;content:"0" counter(step);font-family:"Instrument Serif",serif;font-style:italic;font-size:26px;color:var(--accent);line-height:1}
+.step h4{margin:10px 0 4px;font-size:17px;font-weight:600}
 .step p{margin:0;font-size:14px;color:var(--ink-2)}
 
 /* about */
-.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start}
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,64px);align-items:start}
 @media (max-width:820px){.about{grid-template-columns:1fr}}
-.about .ph{border-radius:20px}
-.about h2{font-size:clamp(28px,4vw,44px);letter-spacing:-.02em;margin-bottom:20px}
-.about p{color:var(--ink-2);max-width:36em;margin:0 0 16px}
-.timeline{margin:28px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.about .ph{aspect-ratio:3/4;border-radius:18px}
+.about h2{font-size:clamp(34px,5vw,60px);letter-spacing:-.02em;margin-bottom:24px}
+.about p{color:var(--ink-2);max-width:34em;margin:0 0 16px}
+.timeline{margin:32px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
 .timeline li{display:grid;grid-template-columns:100px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
 .timeline .y{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--mute);padding-top:4px}
 .timeline b{font-weight:600}
 .timeline span{display:block;font-size:13px;color:var(--mute)}
-.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
 .badge{font-size:12px;border:1px solid var(--line);padding:5px 10px;border-radius:6px;color:var(--ink-2)}
 
 /* contact */
-.contact{background:var(--ink);color:var(--bg);border-radius:24px;padding:clamp(32px,6vw,64px);display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.contact{background:var(--ink);color:var(--bg);border-radius:24px;padding:clamp(36px,6vw,72px);display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
 @media (max-width:820px){.contact{grid-template-columns:1fr}}
-.contact h2{font-size:clamp(32px,5vw,60px);letter-spacing:-.02em;line-height:1.05}
-.contact h2 em{font-style:italic;color:var(--accent)}
-.contact p{opacity:.75;max-width:30em;margin:16px 0 0}
+.contact h2{font-size:clamp(40px,6vw,76px);letter-spacing:-.02em;line-height:1.05}
+.contact p{opacity:.72;max-width:28em;margin:18px 0 0}
 .contact .rows{display:grid;gap:10px}
 .row{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 16px}
-:root[data-theme="dark"] .row,.dark-row{border-color:var(--line)}
 .row .k{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;opacity:.6}
 .row .v{font-weight:600;user-select:all}
 .row button{font-family:inherit;font-size:12px;border:1px solid rgba(255,255,255,.25);background:transparent;color:inherit;border-radius:999px;padding:5px 10px;cursor:pointer}
@@ -173,158 +150,135 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
 
 <main id="top">
   <section class="hero wrap">
-    <div class="grid">
-      <div>
-        <div class="eyebrow">Brand × AI Product Designer · Shanghai / Remote</div>
-        <h1 class="serif" style="margin-top:18px">品牌与 AI 产品设计，<br>交付 <em>快一倍</em>，<br>品质不打折。</h1>
-        <p class="sub">我是高旖伟 Anna，<b>FLock.io 与和光科技的 Design Lead</b>，建筑师出身。我把 AI 知识库、素材库和设计系统接进工作流，帮社区活动、初创团队和品牌做海报物料、品牌视觉与 AI 产品界面。</p>
-        <div class="actions">
-          <a class="btn primary" href="#work">看作品</a>
-          <a class="btn" href="#contact">聊一个项目</a>
+    <h1 class="serif">品牌与 AI 产品设计师，<br><em>交付快一倍。</em></h1>
+    <p class="who"><b>高旖伟 Anna Gao</b> · Design Lead @ FLock.io / 和光科技 · 建筑师出身</p>
+    <div class="actions">
+      <a class="btn primary" href="#work">看作品</a>
+      <a class="btn" href="#contact">聊一个项目</a>
+    </div>
+  </section>
+
+  <section id="work" class="sec">
+    <div class="wrap">
+      <div class="sec-h"><h2 class="serif">精选<em>作品</em></h2><span class="eyebrow">Selected work · 8</span></div>
+      <div class="filters" role="group" aria-label="筛选作品">
+        <button class="chip" aria-pressed="true" data-f="all">全部</button>
+        <button class="chip" aria-pressed="false" data-f="product">AI 产品 &amp; 网站</button>
+        <button class="chip" aria-pressed="false" data-f="brand">品牌 &amp; Logo</button>
+        <button class="chip" aria-pressed="false" data-f="poster">海报 &amp; 活动</button>
+      </div>
+      <div class="works">
+        <article class="work" data-t="product">
+          <div class="ph"><div class="label"><b>FLock.io 官网 + chat.flock.io</b>占位 2400×1650</div></div>
+          <div class="meta"><h3>FLock.io 官网与 AI 共创平台</h3><span class="k"><a href="https://www.flock.io/" target="_blank" rel="noopener">访问</a></span></div>
+        </article>
+        <article class="work" data-t="product">
+          <div class="ph"><div class="label"><b>和光科技</b>占位 2400×1650</div></div>
+          <div class="meta"><h3>和光科技 品牌系统</h3><span class="k">2026</span></div>
+        </article>
+        <article class="work" data-t="brand">
+          <div class="ph"><div class="label"><b>壮游户外 GTO</b>占位 2400×1650</div></div>
+          <div class="meta"><h3>壮游户外 GTO 品牌视觉</h3><span class="k">Logo · VI</span></div>
+        </article>
+        <article class="work" data-t="brand">
+          <div class="ph"><div class="label"><b>UltraX</b>占位 2400×1650</div></div>
+          <div class="meta"><h3>UltraX 标志与平台</h3><span class="k">Logo · Web</span></div>
+        </article>
+        <article class="work" data-t="brand">
+          <div class="ph"><div class="label"><b>FMGO</b>占位 2400×1650</div></div>
+          <div class="meta"><h3>FMGO 品牌物料</h3><span class="k">物料 · Deck</span></div>
+        </article>
+        <article class="work" data-t="poster">
+          <div class="ph"><div class="label"><b>FLock 社媒海报</b>占位 2400×1650</div></div>
+          <div class="meta"><h3>FLock 社媒海报系列</h3><span class="k">2023 – 2026</span></div>
+        </article>
+        <article class="work" data-t="poster">
+          <div class="ph"><div class="label"><b>Qwen × Skyst Hackathon</b>占位 2400×1650</div></div>
+          <div class="meta"><h3>Qwen × Skyst Hackathon 活动视觉</h3><span class="k">2025</span></div>
+        </article>
+        <article class="work" data-t="poster">
+          <div class="ph"><div class="label"><b>FOMO</b>占位 2400×1650</div></div>
+          <div class="meta"><h3>FOMO 产品识别</h3><span class="k">品牌</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="sec">
+    <div class="wrap">
+      <div class="sec-h"><h2 class="serif">服务<em>范围</em></h2><span class="eyebrow">Services</span></div>
+      <div class="services">
+        <div class="svc"><div class="n">a</div><h3>活动海报与物料</h3><p>线上海报、易拉宝、Banner、推文头图及活动周边，统一视觉、多尺寸一次交付。</p><div class="for">社区活动 · Hackathon · 发布会</div></div>
+        <div class="svc"><div class="n">b</div><h3>品牌视觉系统</h3><p>标志、色彩与字体系统、品牌规范、名片与印刷品，为新品牌建立完整起点。</p><div class="for">新品牌 · 产品线 · 工作室</div></div>
+        <div class="svc"><div class="n">c</div><h3>AI 产品界面</h3><p>从零建立设计系统，产出高保真界面，并与研发协作落地。三年 AI 与 Web3 产品经验。</p><div class="for">AI 初创团队 · 平台型产品</div></div>
+        <div class="svc"><div class="n">d</div><h3>官网与落地页</h3><p>桌面与移动端视觉设计，配合前端完整还原上线。多个官网正在运行。</p><div class="for">公司官网 · 产品发布页</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="method" class="sec">
+    <div class="wrap">
+      <div class="method">
+        <div>
+          <div class="eyebrow">Method</div>
+          <h2 class="serif" style="margin-top:14px">系统承担重复，<br><em>人负责判断。</em></h2>
+          <p>AI 知识库、素材库与设计系统构成工作流的基础层，负责规范沉淀与素材复用；方向判断与审美把控由设计师完成。执行效率的提升，使同等质量的交付周期缩短约一半。</p>
+        </div>
+        <div class="stack">
+          <div class="layer"><div class="ic">KB</div><div><b>AI 知识库</b><span>品牌规范、历史决策与行业参考结构化存储，新项目自第一天起具备完整上下文。</span></div></div>
+          <div class="layer"><div class="ic">LIB</div><div><b>素材库</b><span>版式、图形、Prompt 与场景模板可直接复用，同类需求无需从零开始。</span></div></div>
+          <div class="layer"><div class="ic">DS</div><div><b>设计系统</b><span>色彩、字体与组件一次定义，后续每次交付均在既定系统内完成。</span></div></div>
         </div>
       </div>
-      <div class="facts">
-        <div class="fact"><div class="v">10<i>+</i></div><div class="l">年设计训练，建筑到品牌与产品</div></div>
-        <div class="fact"><div class="v">8</div><div class="l">个精选项目，含 3 个已上线网站</div></div>
-        <div class="fact"><div class="v">2<i>×</i></div><div class="l">AI 工作流带来的交付速度</div></div>
-      </div>
-    </div>
-    <div class="ticker" aria-hidden="true">
-      <span>FLock.io</span><span>和光科技 Andlight</span><span>壮游户外 GTO</span><span>UltraX</span><span>FMGO</span><span>Qwen × Skyst Hackathon</span><span>FOMO</span><span>400 盒子</span><span>9grid</span>
-    </div>
-  </section>
-
-  <section id="work" class="sec wrap">
-    <div class="sec-h">
-      <h2 class="serif">精选作品</h2>
-      <p>三类工作：AI 产品与网站、品牌与 Logo、海报与活动物料。每个项目都写清给谁做、我负责什么。</p>
-    </div>
-    <div class="filters" role="group" aria-label="筛选作品">
-      <button class="chip" aria-pressed="true" data-f="all">全部</button>
-      <button class="chip" aria-pressed="false" data-f="product">AI 产品 &amp; 网站</button>
-      <button class="chip" aria-pressed="false" data-f="brand">品牌 &amp; Logo</button>
-      <button class="chip" aria-pressed="false" data-f="poster">海报 &amp; 活动</button>
-    </div>
-    <div class="works">
-      <article class="work lg" data-t="product">
-        <div class="ph r-16-10"><span class="tag">AI 产品 &amp; 网站</span><div class="label"><b>FLock.io 官网 + chat.flock.io</b>占位：桌面首屏截图 2400×1500</div></div>
-        <div class="meta"><h3>FLock.io 官网与 AI 共创平台</h3><span class="k mono">2023 – 2026</span></div>
-        <p>从 0 到 1 制定设计系统，独立完成官网 PC 与移动端视觉，与研发协作上线。</p>
-        <a class="link" href="https://www.flock.io/" target="_blank" rel="noopener">访问网站</a>
-      </article>
-      <article class="work" data-t="product">
-        <div class="ph r-4-3"><span class="tag">AI 产品 &amp; 网站</span><div class="label"><b>和光科技</b>占位：品牌系统封面 1600×1200</div></div>
-        <div class="meta"><h3>和光科技 品牌系统</h3><span class="k mono">2026</span></div>
-        <p>品牌手册、官网、KV 与物料模板，一套系统覆盖对外全部触点。</p>
-      </article>
-      <article class="work" data-t="brand">
-        <div class="ph r-1-1"><span class="tag">品牌 &amp; Logo</span><div class="label"><b>壮游户外 GTO</b>占位：中英文 Logo 组合 1600×1600</div></div>
-        <div class="meta"><h3>壮游户外 GTO</h3><span class="k mono">Logo · VI</span></div>
-        <p>户外品牌完整视觉：中英文标志、黑白版、图案、服装与社媒应用。</p>
-      </article>
-      <article class="work" data-t="brand">
-        <div class="ph r-1-1"><span class="tag">品牌 &amp; Logo</span><div class="label"><b>UltraX</b>占位：最终 Logo 1600×1600</div></div>
-        <div class="meta"><h3>UltraX</h3><span class="k mono">Logo · DeFi</span></div>
-        <p>DeFi 产品标志提案与定稿，配套平台网页系统设计，已上线。</p>
-      </article>
-      <article class="work" data-t="brand">
-        <div class="ph r-1-1"><span class="tag">品牌 &amp; Logo</span><div class="label"><b>FMGO</b>占位：名片 / Deck 拼贴 1600×1600</div></div>
-        <div class="meta"><h3>FMGO 品牌物料</h3><span class="k mono">物料 · Deck</span></div>
-        <p>品牌图形延展到名片、一页纸与商业计划书，绿色立体条纹贯穿。</p>
-      </article>
-      <article class="work md" data-t="poster">
-        <div class="ph r-16-10"><span class="tag">海报 &amp; 活动</span><div class="label"><b>FLock 社媒海报系列</b>占位：3–6 张拼贴 2400×1500</div></div>
-        <div class="meta"><h3>FLock 社媒海报系列</h3><span class="k mono">2023 – 2026</span></div>
-        <p>模板、渠道图、活动海报，一套版式系统持续产出三年。</p>
-      </article>
-      <article class="work md" data-t="poster">
-        <div class="ph r-16-10"><span class="tag">海报 &amp; 活动</span><div class="label"><b>Qwen × Skyst Hackathon</b>占位：主视觉 + 物料 2400×1500</div></div>
-        <div class="meta"><h3>Qwen × Skyst Hackathon</h3><span class="k mono">2025</span></div>
-        <p>黑客松主视觉与全套活动物料，线上线下同步投放。</p>
-      </article>
-      <article class="work lg" data-t="poster">
-        <div class="ph r-21-9"><span class="tag">海报 &amp; 活动</span><div class="label"><b>FOMO 产品识别</b>占位：应用横幅 2400×1030</div></div>
-        <div class="meta"><h3>FOMO 产品识别</h3><span class="k mono">产品品牌</span></div>
-        <p>为 FLock 旗下产品建立独立识别，兼容主品牌系统。</p>
-      </article>
-      <article class="work" data-t="brand">
-        <div class="ph r-3-4"><span class="tag">预留位</span><div class="label"><b>下一个项目</b>占位：竖版 1200×1600</div></div>
-        <div class="meta"><h3>预留</h3><span class="k mono">—</span></div>
-        <p>只有能替换现有作品的项目才进来。</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="services" class="sec wrap">
-    <div class="sec-h">
-      <h2 class="serif">我能帮你做什么</h2>
-      <p>四类服务，按你手上的事对号入座。不确定属于哪类，直接来聊。</p>
-    </div>
-    <div class="services">
-      <div class="svc"><div class="n">a.</div><h3>活动海报与物料</h3><p>线上海报、易拉宝、Banner、推文头图、活动周边。一套视觉，多种尺寸一次交付。</p><div class="for">适合：社区活动、Hackathon、发布会</div></div>
-      <div class="svc"><div class="n">b.</div><h3>品牌视觉 VI</h3><p>Logo、色彩与字体系统、品牌规范、名片与印刷品。给新品牌一个完整起点。</p><div class="for">适合：新品牌、产品线、工作室</div></div>
-      <div class="svc"><div class="n">c.</div><h3>AI 产品 UI / UX</h3><p>从 0 到 1 的设计系统、高保真界面、与研发协作落地。三年 AI 与 Web3 产品经验。</p><div class="for">适合：AI 初创团队、平台型产品</div></div>
-      <div class="svc"><div class="n">d.</div><h3>官网与落地页</h3><p>PC 与移动端视觉设计，配合前端 100% 还原上线。多个官网正在运行。</p><div class="for">适合：公司官网、产品发布页</div></div>
-    </div>
-  </section>
-
-  <section id="method" class="sec wrap">
-    <div class="method">
-      <div>
-        <div class="eyebrow">How I work</div>
-        <h2 class="big serif" style="margin-top:14px">重复的交给系统，<br><em>判断和审美</em>留给人。</h2>
-        <p style="margin-top:20px">我把三层东西接进日常工作流。它们不替我做决定，但让每一次决定之后的执行快得多，所以能在更短周期里交出同样水准的东西。</p>
-      </div>
-      <div class="stack">
-        <div class="layer"><div class="ic">KB</div><div><b>AI 知识库</b><span>品牌规范、过往决策、行业参考沉淀成可调用的知识。新项目从第一天就有上下文。</span></div></div>
-        <div class="layer"><div class="ic">LIB</div><div><b>素材库</b><span>可复用的版式、图形、Prompt 与场景模板。同类需求不从零开始。</span></div></div>
-        <div class="layer"><div class="ic">DS</div><div><b>设计系统</b><span>颜色、字体、组件一次定好。第二次交付起，每次都比上次快。</span></div></div>
-      </div>
-    </div>
-    <div class="steps">
-      <div class="step"><h4>沟通需求</h4><p>30 分钟了解目标、受众、交付物和时间。</p></div>
-      <div class="step"><h4>报价确认</h4><p>明确范围、周期、修改轮次，确认后启动。</p></div>
-      <div class="step"><h4>初稿与修改</h4><p>按约定时间交初稿，含 2 轮修改。</p></div>
-      <div class="step"><h4>交付源文件</h4><p>全部尺寸与源文件，可直接使用。</p></div>
-    </div>
-  </section>
-
-  <section id="about" class="sec wrap">
-    <div class="about">
-      <div class="ph r-3-4"><div class="label"><b>头像 / 工作照</b>占位：竖版 1200×1600</div></div>
-      <div>
-        <div class="eyebrow">About</div>
-        <h2 class="serif" style="margin-top:14px">先学了七年建筑，<br>再做了七年设计。</h2>
-        <p>宾夕法尼亚大学建筑学硕士，利物浦大学建筑学一等荣誉学士，美国纽约州注册建筑师。建筑训练留下的是系统思维和对比例、材料的敏感，这两样东西现在都用在品牌和产品上。</p>
-        <p>2023 年起在 FLock.io 担任设计负责人，负责 AI 共创平台的设计系统、官网与品牌视觉；同年创立橘阵多元设计工作室，为 400 盒子、9grid、UltraX 等客户交付已上线的产品与官网。2026 年加入和光科技任 Design Lead。</p>
-        <ul class="timeline">
-          <li><span class="y">2026 –</span><div><b>和光科技 · Design Lead</b><span>品牌系统、官网、AI 产品</span></div></li>
-          <li><span class="y">2023 –</span><div><b>FLock.io · 设计负责人</b><span>设计系统、平台 UIUX、官网、品牌视觉</span></div></li>
-          <li><span class="y">2023 –</span><div><b>橘阵多元设计工作室 · 主理人</b><span>400 盒子、9grid、UltraX、缤瓜、壮游户外</span></div></li>
-          <li><span class="y">2015 – 18</span><div><b>宾夕法尼亚大学 · 建筑学硕士</b><span>综合性产品设计方向</span></div></li>
-          <li><span class="y">2011 – 15</span><div><b>利物浦大学 · 建筑学一等荣誉学士</b><span>RIBA Part I</span></div></li>
-        </ul>
-        <div class="badges"><span class="badge">AIA 注册建筑师</span><span class="badge">LEED AP BD+C</span><span class="badge">Figma</span><span class="badge">Adobe</span><span class="badge">AI 生成工具</span><span class="badge">中 / 英</span></div>
+      <div class="steps">
+        <div class="step"><h4>需求沟通</h4><p>30 分钟明确目标、受众、交付物与时间。</p></div>
+        <div class="step"><h4>报价确认</h4><p>确定范围、周期与修改轮次后启动。</p></div>
+        <div class="step"><h4>初稿与修改</h4><p>按约定时间提交初稿，含两轮修改。</p></div>
+        <div class="step"><h4>交付源文件</h4><p>提供全部尺寸与源文件，可直接使用。</p></div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="sec wrap">
-    <div class="contact">
-      <div>
-        <div class="eyebrow" style="color:inherit;opacity:.6">Contact</div>
-        <h2 class="serif" style="margin-top:14px">有想法，<br><em>随时找我聊。</em></h2>
-        <p>活动海报、品牌视觉、AI 产品设计，或者只是想认识一下。一般 24 小时内回复。</p>
-      </div>
-      <div class="rows">
-        <div class="row"><div><div class="k">EMAIL</div><div class="v" id="email">annayiweigao@163.com</div></div><button type="button" data-copy="email">复制</button></div>
-        <div class="row"><div><div class="k">WECHAT</div><div class="v" id="wechat">【微信号占位】</div></div><button type="button" data-copy="wechat">复制</button></div>
-        <div class="row"><div><div class="k">PRICING</div><div class="v">报价单 PDF 私发</div></div><span class="k">留言索取</span></div>
+  <section id="about" class="sec">
+    <div class="wrap">
+      <div class="about">
+        <div class="ph"><div class="label"><b>头像 / 工作照</b>占位 1200×1600</div></div>
+        <div>
+          <div class="eyebrow">About</div>
+          <h2 class="serif" style="margin-top:14px">七年建筑，<br><em>七年设计。</em></h2>
+          <p>宾夕法尼亚大学建筑学硕士，利物浦大学建筑学一等荣誉学士，美国纽约州注册建筑师。建筑训练带来的系统思维与对比例、材料的敏感，现在用于品牌与产品设计。</p>
+          <p>2023 年起任 FLock.io 设计负责人，负责 AI 共创平台的设计系统、官网与品牌视觉；同年创立橘阵多元设计工作室，为 400 盒子、9grid、UltraX 等客户交付已上线的产品与官网。2026 年加入和光科技任 Design Lead。</p>
+          <ul class="timeline">
+            <li><span class="y">2026 –</span><div><b>和光科技 · Design Lead</b><span>品牌系统、官网、AI 产品</span></div></li>
+            <li><span class="y">2023 –</span><div><b>FLock.io · 设计负责人</b><span>设计系统、平台界面、官网、品牌视觉</span></div></li>
+            <li><span class="y">2023 –</span><div><b>橘阵多元设计工作室 · 主理人</b><span>400 盒子、9grid、UltraX、缤瓜、壮游户外</span></div></li>
+            <li><span class="y">2015 – 18</span><div><b>宾夕法尼亚大学 · 建筑学硕士</b><span>综合性产品设计方向</span></div></li>
+            <li><span class="y">2011 – 15</span><div><b>利物浦大学 · 建筑学一等荣誉学士</b><span>RIBA Part I</span></div></li>
+          </ul>
+          <div class="badges"><span class="badge">AIA 注册建筑师</span><span class="badge">LEED AP BD+C</span><span class="badge">Figma</span><span class="badge">Adobe</span><span class="badge">AI 生成工具</span><span class="badge">中 / 英</span></div>
+        </div>
       </div>
     </div>
-    <div class="footer">
-      <span>© 2026 Anna Gao · Brand × AI Product Design</span>
-      <span>Shanghai · Remote · 中 / EN</span>
+  </section>
+
+  <section id="contact" class="sec">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <div class="eyebrow" style="color:inherit;opacity:.6">Contact</div>
+          <h2 class="serif" style="margin-top:14px">有想法，<br><em>随时联系。</em></h2>
+          <p>活动海报、品牌视觉、AI 产品设计，或仅是认识一下。一般 24 小时内回复。</p>
+        </div>
+        <div class="rows">
+          <div class="row"><div><div class="k">EMAIL</div><div class="v" id="email">annayiweigao@163.com</div></div><button type="button" data-copy="email">复制</button></div>
+          <div class="row"><div><div class="k">WECHAT</div><div class="v" id="wechat">【微信号占位】</div></div><button type="button" data-copy="wechat">复制</button></div>
+          <div class="row"><div><div class="k">PRICING</div><div class="v">报价单 PDF</div></div><span class="k">留言索取</span></div>
+        </div>
+      </div>
+      <div class="footer">
+        <span>© 2026 Anna Gao · Brand × AI Product Design</span>
+        <span>Shanghai · Remote · 中 / EN</span>
+      </div>
     </div>
   </section>
 </main>
