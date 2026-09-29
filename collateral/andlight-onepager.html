@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>和光科技 产品一页纸</title>
+<style>
+@font-face{font-family:"FangYuan";src:url(../assets/AlimamaFangYuanTiVF.ttf);font-weight:100 900}
+@font-face{font-family:"Inter";src:url(../assets/Inter.ttf);font-weight:100 900}
+@font-face{font-family:"Geist";src:url(../assets/Geist-VariableFont_wght.ttf);font-weight:100 900}
+@font-face{font-family:"GeistMono";src:url(../assets/GeistMono-VariableFont_wght.ttf);font-weight:100 900}
+:root{
+  --primary:#ff4f05; --tint:#ffe9e0; --tint-50:#fff4ef;
+  --title:#181818; --title2:#2d2d2d; --body:#5d5d5d; --caption:#686868;
+  --bg:#fffefd; --card:#fafafa; --white:#fff; --border:#e2e2e2;
+}
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg)}
+body{font-family:"FangYuan","Inter",sans-serif;color:var(--title);-webkit-font-smoothing:antialiased}
+.en{font-family:"Inter",sans-serif}
+.sheet{width:210mm;height:297mm;position:relative;overflow:hidden;padding:13mm 15mm 12mm;background:var(--bg)}
+.corner{position:absolute;right:0;top:0;width:34mm;height:34mm}
+.vec{display:none}
+.logo{height:10mm}
+.head{display:flex;justify-content:space-between;align-items:center}
+.head .who{font-family:"Inter";font-size:8pt;letter-spacing:.12em;color:var(--caption);text-transform:uppercase}
+
+.hero{margin-top:8mm}
+.kicker{display:inline-flex;align-items:center;gap:6px;font-size:9pt;color:var(--primary);font-weight:600;letter-spacing:.06em}
+.kicker img{height:8px}
+h1{font-size:21pt;line-height:1.25;font-weight:600;margin-top:3mm;letter-spacing:-.01em}
+h1 em{font-style:normal;color:var(--primary)}
+.lead{margin-top:3mm;font-size:9pt;line-height:1.65;color:var(--body);max-width:165mm}
+
+.h2{display:flex;align-items:center;gap:6px;font-size:11pt;font-weight:600;margin:6mm 0 3mm}
+.h2 img{height:9px}
+.h2 .en{margin-left:auto;font-size:7.5pt;color:var(--caption);letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
+.card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:4mm 4.5mm;position:relative;overflow:hidden}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(225deg,rgba(255,79,5,.09),rgba(255,79,5,.02) 55%,rgba(255,79,5,0));pointer-events:none}
+.card .n{font-family:"Geist";font-size:8pt;font-weight:600;color:var(--primary);letter-spacing:.08em}
+.card h3{font-size:10.5pt;font-weight:600;margin-top:1.5mm;line-height:1.35}
+.card p{font-size:8pt;line-height:1.6;color:var(--body);margin-top:1.5mm}
+.card ul{margin-top:2mm;padding-left:0;list-style:none}
+.card li{font-size:8pt;line-height:1.55;color:var(--title2);display:flex;gap:5px}
+.card li::before{content:"";width:5px;height:5px;background:var(--primary);flex:none;margin-top:6px;clip-path:polygon(100% 0,100% 100%,0 100%)}
+
+.pains{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
+.pain{background:var(--tint-50);border-radius:10px;padding:3.5mm 4.5mm}
+.pain b{display:block;font-size:10pt;font-weight:600}
+.pain span{display:block;font-size:8pt;line-height:1.55;color:var(--body);margin-top:1.5mm}
+
+.fit{display:flex;flex-wrap:wrap;gap:2.5mm}
+.chip{border:1px solid var(--border);background:var(--white);border-radius:999px;padding:1.6mm 3.5mm;font-size:8pt;color:var(--title2)}
+.chip b{color:var(--primary);font-weight:600;margin-right:3px}
+
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.step{padding-right:4mm;position:relative}
+.step .c{width:8mm;height:8mm;border-radius:50%;background:var(--primary);color:#fff;font-family:"Geist";font-size:10pt;font-weight:600;display:flex;align-items:center;justify-content:center}
+.step::after{content:"";position:absolute;left:8mm;top:4mm;right:0;border-top:1.5px dashed #fdc9b5}
+.step:last-child::after{display:none}
+.step h4{font-size:9.5pt;font-weight:600;margin-top:2mm}
+.step h4 small{display:block;font-family:"Inter";font-size:7pt;color:var(--caption);letter-spacing:.1em;text-transform:uppercase;font-weight:500;margin-bottom:1mm}
+.step p{font-size:7.8pt;line-height:1.55;color:var(--body);margin-top:1mm}
+
+.foot{position:absolute;left:15mm;right:15mm;bottom:10mm;display:flex;justify-content:space-between;align-items:flex-end;border-top:1.5px solid var(--title);padding-top:4mm}
+.foot .who b{font-size:11pt;font-weight:600;display:block}
+.foot .who span{font-size:8.5pt;color:var(--primary);font-weight:500;display:block;margin-top:.5mm}
+.foot .who p{font-size:8.5pt;color:var(--body);margin-top:2mm;line-height:1.6}
+.foot .who p i{font-style:normal;font-family:"Inter";color:var(--caption);font-size:7pt;letter-spacing:.1em;display:inline-block;width:14mm}
+.foot .qr{display:flex;gap:4mm;align-items:flex-end}
+.foot .qr div{width:20mm;height:20mm;border:1.2px dashed var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:7pt;color:var(--caption);text-align:center;line-height:1.4;background:var(--white)}
+.pg{position:absolute;right:15mm;bottom:4mm;font-family:"Geist";font-size:7.5pt;color:var(--caption);letter-spacing:.1em}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <img class="corner" src="../assets/andlight-icon-orange.svg" alt="">
+  <img class="vec" src="../assets/graphic-vector-52.svg" alt="">
+
+  <div class="head">
+    <img class="logo" src="../assets/andlight-logo-cnen-color.svg" alt="和光科技 Andlight">
+    <div class="who">AI Solutions for Growing Businesses</div>
+  </div>
+
+  <div class="hero">
+    <div class="kicker"><img src="../assets/highlight-mark.svg" alt="">和光科技 · 产品与服务简介</div>
+    <h1>让 AI 真正落进你的业务里，<br><em>数据不出门，效果看得见。</em></h1>
+    <p class="lead">和光科技为中小企业提供可私有化部署的 AI 系统与 AIGC 内容生产服务。我们不卖概念，从一个具体场景开始，先跑通试点，再规模化。背靠 FLock.io 的联邦学习与隐私计算技术。</p>
+  </div>
+
+  <div class="h2"><img src="../assets/highlight-mark.svg" alt="">我们解决的三个问题<span class="en">Why Andlight</span></div>
+  <div class="pains">
+    <div class="pain"><b>数据不出门</b><span>模型和知识库部署在你自己的环境里，客户资料、合同、病历、财务数据都不上传第三方。</span></div>
+    <div class="pain"><b>合规可审计</b><span>每一次调用和输出可追溯，满足律所、医疗、会计等行业的合规与审计要求。</span></div>
+    <div class="pain"><b>模型可掌控</b><span>模型属于你，随业务数据持续优化，不被云厂商锁定，不为通用能力付溢价。</span></div>
+  </div>
+
+  <div class="h2"><img src="../assets/highlight-mark.svg" alt="">产品与服务<span class="en">Products &amp; Services</span></div>
+  <div class="cards">
+    <div class="card">
+      <div class="n">01</div>
+      <h3>私有化 AI 系统</h3>
+      <p>企业内部的 AI 大脑，本地部署，开箱即用。</p>
+      <ul><li>企业知识库 / 知识图谱</li><li>本地部署大语言模型</li><li>部门级 Agent 与流程自动化</li><li>合同、文档、卷宗智能处理</li></ul>
+    </div>
+    <div class="card">
+      <div class="n">02</div>
+      <h3>AIGC 视觉内容生产</h3>
+      <p>用 AI 稳定产出可直接上架的品牌视觉素材。</p>
+      <ul><li>电商模特图与商品图</li><li>品牌风格资产库与 Prompt 库</li><li>可验收的交付标准与 SOP</li><li>已在服装品牌跑通真实订单</li></ul>
+    </div>
+    <div class="card">
+      <div class="n">03</div>
+      <h3>AI 落地咨询</h3>
+      <p>从场景诊断到团队上手，陪你走完第一公里。</p>
+      <ul><li>业务场景诊断与优先级排序</li><li>方案设计、硬件与部署选型</li><li>团队培训与使用规范</li><li>持续迭代与效果评估</li></ul>
+    </div>
+  </div>
+
+  <div class="h2"><img src="../assets/highlight-mark.svg" alt="">适合谁<span class="en">Who it's for</span></div>
+  <div class="fit">
+    <div class="chip"><b>律所</b>卷宗与类案检索、文书辅助</div>
+    <div class="chip"><b>会计 / 审计</b>财税文档处理、内部知识库</div>
+    <div class="chip"><b>医疗机构</b>科室级 AI 助手、本地化部署</div>
+    <div class="chip"><b>制造业</b>工艺与良率知识沉淀</div>
+    <div class="chip"><b>电商 / 品牌</b>AIGC 视觉内容、更快上新</div>
+    <div class="chip"><b>教育</b>教研与备课辅助、校内知识库</div>
+  </div>
+
+  <div class="h2"><img src="../assets/highlight-mark.svg" alt="">合作流程<span class="en">How we work</span></div>
+  <div class="flow">
+    <div class="step"><div class="c">1</div><h4><small>Diagnose</small>需求诊断</h4><p>1 次会议，找出最值得先做的那个场景。</p></div>
+    <div class="step"><div class="c">2</div><h4><small>Propose</small>方案与报价</h4><p>明确交付边界、验收标准与周期。</p></div>
+    <div class="step"><div class="c">3</div><h4><small>Pilot</small>试点交付</h4><p>小范围跑通真实业务，量化效果。</p></div>
+    <div class="step"><div class="c">4</div><h4><small>Scale</small>规模化部署</h4><p>复制到更多部门与场景，持续运维。</p></div>
+  </div>
+
+  <div class="foot">
+    <div class="who">
+      <b>高旖伟 Anna Gao</b>
+      <span>Design Lead · 和光科技 / FLock.io</span>
+      <p><i>EMAIL</i>annayiweigao@163.com<br><i>WEB</i>【和光科技官网】</p>
+    </div>
+    <div class="qr"><div>微信<br>二维码</div><div>官网<br>二维码</div></div>
+  </div>
+  <div class="pg">ANDLIGHT · 01</div>
+</div>
+</body>
+</html>

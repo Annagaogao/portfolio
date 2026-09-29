@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Anna Gao 个人名片</title>
+<style>
+@font-face{font-family:"FangYuan";src:url(../assets/AlimamaFangYuanTiVF.ttf);font-weight:100 900}
+@font-face{font-family:"Inter";src:url(../assets/Inter.ttf);font-weight:100 900}
+@font-face{font-family:"Geist";src:url(../assets/Geist-VariableFont_wght.ttf);font-weight:100 900}
+@font-face{font-family:"GeistMono";src:url(../assets/GeistMono-VariableFont_wght.ttf);font-weight:100 900}
+:root{
+  --paper:#F5F3EE; --ink:#141416; --ink-2:#4A4A50; --ink-3:#8A8A92;
+  --line:#DCD8CF; --accent:#2447F5; --accent-tint:#E4E9FF; --white:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper)}
+body{width:1080px;font-family:"Inter","FangYuan",sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.cn{font-family:"FangYuan","Inter",sans-serif}
+.num{font-family:"GeistMono",monospace}
+.page{padding:88px 80px 80px}
+
+/* header */
+.hero{display:flex;justify-content:space-between;align-items:flex-start}
+.avatar{width:168px;height:168px;border-radius:50%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-weight:500;font-size:56px;letter-spacing:-.02em;flex:none}
+.avatar span{font-size:14px;letter-spacing:.08em;font-weight:400;position:absolute}
+.tag{display:inline-block;font-size:18px;letter-spacing:.14em;color:var(--accent);font-weight:600;text-transform:uppercase;margin-bottom:22px}
+h1{font-size:76px;line-height:1;font-weight:600;letter-spacing:-.03em}
+h1 .en{display:block;font-size:30px;font-weight:400;letter-spacing:.02em;color:var(--ink-2);margin-top:14px}
+.role{margin-top:34px;font-size:24px;line-height:1.55;color:var(--ink-2)}
+.role b{color:var(--ink);font-weight:600}
+
+/* claim */
+.claim{margin-top:64px;padding:48px 52px;background:var(--ink);color:var(--paper);border-radius:28px;position:relative;overflow:hidden}
+.claim .k{font-size:15px;letter-spacing:.16em;color:#9FA6C9;text-transform:uppercase;font-weight:600}
+.claim h2{font-size:44px;line-height:1.3;font-weight:600;margin-top:18px;letter-spacing:-.01em}
+.claim h2 em{font-style:normal;color:#8CA0FF}
+.claim p{margin-top:20px;font-size:21px;line-height:1.7;color:#C9CBD6;max-width:760px}
+.claim .badge{position:absolute;right:52px;top:48px;font-size:96px;line-height:1;font-weight:500;color:#8CA0FF;letter-spacing:-.04em}
+.claim .badge small{font-size:18px;display:block;text-align:right;color:#9FA6C9;letter-spacing:.1em;font-family:"Inter";margin-top:6px}
+
+/* sections */
+section{margin-top:72px}
+.sec-h{display:flex;align-items:baseline;gap:18px;padding-bottom:18px;border-bottom:2px solid var(--ink);margin-bottom:34px}
+.sec-h .n{font-family:"Geist";font-size:16px;font-weight:600;color:var(--accent);letter-spacing:.08em}
+.sec-h h3{font-size:30px;font-weight:600;letter-spacing:-.01em}
+.sec-h .en{margin-left:auto;font-size:15px;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:32px 34px}
+.card h4{font-size:26px;font-weight:600;line-height:1.3}
+.card p{margin-top:12px;font-size:19px;line-height:1.65;color:var(--ink-2)}
+.card .ic{width:44px;height:44px;border-radius:12px;background:var(--accent-tint);color:var(--accent);display:flex;align-items:center;justify-content:center;font-family:"Geist";font-weight:600;font-size:18px;margin-bottom:22px}
+
+/* workflow */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:28px 24px;position:relative}
+.step .n{font-family:"Geist";font-size:15px;font-weight:600;color:var(--accent);letter-spacing:.08em}
+.step h5{font-size:23px;font-weight:600;margin-top:14px;line-height:1.3}
+.step p{font-size:17px;line-height:1.6;color:var(--ink-2);margin-top:10px}
+.why{margin-top:20px;background:var(--accent-tint);border-radius:20px;padding:28px 34px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px}
+.why div{font-size:18px;line-height:1.6;color:var(--ink-2)}
+.why b{display:block;color:var(--ink);font-size:21px;margin-bottom:6px;font-weight:600}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.stat{padding:30px 0 0;border-top:1px solid var(--line)}
+.stat .v{font-family:"GeistMono";font-size:64px;font-weight:500;letter-spacing:-.04em;line-height:1}
+.stat .v i{font-style:normal;font-size:30px;color:var(--accent);margin-left:4px}
+.stat .l{margin-top:14px;font-size:19px;color:var(--ink-2);line-height:1.5}
+
+/* background list */
+.bg{display:grid;grid-template-columns:1fr 1fr;gap:14px 40px}
+.bg li{list-style:none;display:flex;gap:16px;font-size:20px;line-height:1.55;padding:16px 0;border-bottom:1px solid var(--line)}
+.bg li .y{font-family:"Geist";font-size:15px;color:var(--ink-3);width:100px;flex:none;padding-top:5px;letter-spacing:.04em}
+.bg li b{font-weight:600;display:block}
+.bg li span{color:var(--ink-2);font-size:18px}
+
+/* contact */
+.contact{margin-top:80px;background:var(--white);border:1px solid var(--line);border-radius:28px;padding:44px 48px;display:flex;justify-content:space-between;align-items:center;gap:40px}
+.contact .l h3{font-size:34px;font-weight:600;letter-spacing:-.01em}
+.contact .l p{margin-top:12px;font-size:20px;color:var(--ink-2);line-height:1.6}
+.contact .l .row{margin-top:26px;display:flex;flex-direction:column;gap:10px;font-size:20px}
+.contact .l .row span{color:var(--ink-3);display:inline-block;width:70px;font-size:16px;letter-spacing:.1em}
+.qrs{display:flex;gap:20px;flex:none}
+.qr{width:180px;text-align:center}
+.qr .box{width:180px;height:180px;border:2px dashed var(--line);border-radius:16px;display:flex;align-items:center;justify-content:center;color:var(--ink-3);font-size:16px;line-height:1.5;background:var(--paper)}
+.qr p{margin-top:12px;font-size:16px;color:var(--ink-2)}
+.foot{margin-top:40px;display:flex;justify-content:space-between;font-size:14px;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <div>
+      <div class="tag">Brand × AI Product Designer</div>
+      <h1 class="cn">高旖伟<span class="en">Anna Gao</span></h1>
+      <p class="role cn">品牌 + AI 产品设计师<br><b>Design Lead</b> @ FLock.io · 和光科技<br>橘阵多元设计工作室 主理人</p>
+    </div>
+    <div class="avatar">AG</div>
+  </div>
+
+  <div class="claim">
+    <div class="k">What I do</div>
+    <h2 class="cn">用 AI 工作流交付品牌与产品设计，<br><em>质量不变，速度快 2 倍。</em></h2>
+    <p class="cn">我把 AI 知识库、素材库和设计系统接进日常工作流。重复的部分交给系统，判断和审美留给人，所以能在更短的周期里交出同样水准的东西。</p>
+    <div class="badge">2×<small>Faster</small></div>
+  </div>
+
+  <section>
+    <div class="sec-h"><span class="n">01</span><h3 class="cn">我能帮你做什么</h3><span class="en">Services</span></div>
+    <div class="grid2">
+      <div class="card"><div class="ic">A</div><h4 class="cn">活动海报与物料</h4><p class="cn">线上海报、易拉宝、Banner、推文头图、活动周边。一套视觉，多种尺寸一次交付。</p></div>
+      <div class="card"><div class="ic">B</div><h4 class="cn">品牌视觉 VI</h4><p class="cn">Logo、色彩与字体系统、品牌规范文档、名片与印刷品。给新品牌一个完整的起点。</p></div>
+      <div class="card"><div class="ic">C</div><h4 class="cn">AI 产品 UI / UX</h4><p class="cn">从 0 到 1 的设计系统、高保真界面、与研发协作落地。3 年 AI / Web3 产品经验。</p></div>
+      <div class="card"><div class="ic">D</div><h4 class="cn">官网与落地页</h4><p class="cn">PC + 移动端视觉设计，配合前端 100% 还原上线。多个官网项目已上线运行。</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="n">02</span><h3 class="cn">合作流程</h3><span class="en">How we work</span></div>
+    <div class="flow">
+      <div class="step"><div class="n">STEP 1</div><h5 class="cn">沟通需求</h5><p class="cn">30 分钟了解目标、受众、交付物和时间。</p></div>
+      <div class="step"><div class="n">STEP 2</div><h5 class="cn">报价确认</h5><p class="cn">明确范围、周期、修改轮次，确认后启动。</p></div>
+      <div class="step"><div class="n">STEP 3</div><h5 class="cn">初稿与修改</h5><p class="cn">按约定时间交初稿，含 2 轮修改。</p></div>
+      <div class="step"><div class="n">STEP 4</div><h5 class="cn">交付源文件</h5><p class="cn">交付全部尺寸与源文件，可直接使用。</p></div>
+    </div>
+    <div class="why">
+      <div><b class="cn">AI 知识库</b><span class="cn">品牌规范、过往决策、行业参考沉淀成可调用的知识。</span></div>
+      <div><b class="cn">素材库</b><span class="cn">可复用的版式、图形、Prompt 与场景模板。</span></div>
+      <div><b class="cn">设计系统</b><span class="cn">颜色、字体、组件一次定好，之后每次都更快。</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="n">03</span><h3 class="cn">一些数字</h3><span class="en">Numbers</span></div>
+    <div class="stats">
+      <div class="stat"><div class="v">10<i>+</i></div><div class="l cn">年设计训练<br>建筑学 → 产品与品牌设计</div></div>
+      <div class="stat"><div class="v">2</div><div class="l cn">家科技公司 Design Lead<br>FLock.io · 和光科技</div></div>
+      <div class="stat"><div class="v">6<i>+</i></div><div class="l cn">个已上线的客户项目<br>小程序 · 官网 · 平台 · 品牌</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="n">04</span><h3 class="cn">背景</h3><span class="en">Background</span></div>
+    <ul class="bg">
+      <li><span class="y">2023 –</span><div><b class="cn">FLock.io · 设计负责人</b><span class="cn">AI 共创平台 UIUX、设计系统、官网与品牌视觉</span></div></li>
+      <li><span class="y">2023 –</span><div><b class="cn">橘阵多元设计工作室 · 主理人</b><span class="cn">400盒子小程序、9grid 官网、UltraX 平台等已上线</span></div></li>
+      <li><span class="y">2015 – 18</span><div><b class="cn">宾夕法尼亚大学 · 建筑学硕士</b><span class="cn">综合性产品设计方向，4 次作品被学校出版</span></div></li>
+      <li><span class="y">2011 – 15</span><div><b class="cn">利物浦大学 · 建筑学一等荣誉学士</b><span class="cn">英国皇家建筑师 RIBA Part I</span></div></li>
+      <li><span class="y">资质</span><div><b class="cn">美国纽约州注册建筑师 (AIA)</b><span class="cn">LEED GA · LEED AP BD+C</span></div></li>
+      <li><span class="y">工具</span><div><b class="cn">Figma · Adobe 全家桶 · AI 生成工具</b><span class="cn">中英双语工作，雅思 7.0</span></div></li>
+    </ul>
+  </section>
+
+  <div class="contact">
+    <div class="l">
+      <h3 class="cn">有想法，随时找我聊。</h3>
+      <p class="cn">活动海报、品牌视觉、AI 产品设计，或者只是想认识一下。</p>
+      <div class="row">
+        <div><span>EMAIL</span>annayiweigao@163.com</div>
+        <div><span>WEB</span>【作品集网站地址】</div>
+      </div>
+    </div>
+    <div class="qrs">
+      <div class="qr"><div class="box">微信<br>二维码</div><p class="cn">加微信</p></div>
+      <div class="qr"><div class="box">网站<br>二维码</div><p class="cn">看作品集</p></div>
+    </div>
+  </div>
+
+  <div class="foot"><span>Anna Gao · Brand × AI Product Design</span><span>Shanghai · Remote</span></div>
+</div>
+</body>
+</html>
