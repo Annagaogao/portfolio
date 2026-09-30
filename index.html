@@ -4,310 +4,311 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Anna Gao Portfolio</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Serif+SC:wght@400;500&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
 <style>
 :root{
-  --bg:#F3F1EC; --surface:#FFFFFF; --ink:#17171A; --ink-2:#4B4B52; --mute:#7A7A83;
-  --line:#D9D6CE; --line-2:#E8E5DE; --accent:#17171A; --accent-ink:#F3F1EC; --tint:#E9E6DF;
-  --hatch:repeating-linear-gradient(135deg,transparent 0 10px,rgba(23,23,26,.06) 10px 11px);
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#121214; --surface:#1B1B1F; --ink:#EDEBE6; --ink-2:#B9B7B1; --mute:#84838C;
-    --line:#2E2E34; --line-2:#26262B; --accent:#EDEBE6; --accent-ink:#121214; --tint:#26262B;
-    --hatch:repeating-linear-gradient(135deg,transparent 0 10px,rgba(237,235,230,.07) 10px 11px);
-    color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#121214; --surface:#1B1B1F; --ink:#EDEBE6; --ink-2:#B9B7B1; --mute:#84838C;
-  --line:#2E2E34; --line-2:#26262B; --accent:#EDEBE6; --accent-ink:#121214; --tint:#26262B;
-  --hatch:repeating-linear-gradient(135deg,transparent 0 10px,rgba(237,235,230,.07) 10px 11px);
-  color-scheme:dark;
+  --bg:#F5F5F7; --surface:#FFFFFF; --ink:#0B0B0F; --ink-2:#3A3A44; --mute:#7C7C88; --line:#E3E3E8;
+  --black:#0B0B0F; --on-black:#F5F5F7; --on-black-2:#B4B4C0;
+  --v1:#EDEBFA; --v2:#8C7BF0; --v3:#4B3BC9; --v4:#1B1656; --v5:#08070F;
+  --glass:rgba(255,255,255,.14); --glass-line:rgba(255,255,255,.28);
+  --r:16px; --r-lg:22px;
+  color-scheme:light;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope","Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans","Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--v2);outline-offset:3px;border-radius:6px}
 img{max-width:100%;display:block}
-.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
-.serif{font-family:"Instrument Serif","Noto Serif SC","Songti SC",Georgia,serif;font-weight:400;color:var(--ink-2)}
-.serif em{font-style:italic;color:var(--ink)}
-.contact .serif{color:color-mix(in srgb,var(--bg) 62%,transparent)}
-.contact .serif em{color:var(--bg)}
-.eyebrow{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
-h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
+h1,h2,h3,h4{margin:0;font-weight:400;line-height:1.1;letter-spacing:-.02em;text-wrap:balance}
+.wrap{max-width:1300px;margin:0 auto;padding-inline:clamp(16px,4vw,48px)}
+.eyebrow{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mute);letter-spacing:.02em}
+.eyebrow::before{content:"";width:12px;height:12px;border:1.5px solid currentColor;border-radius:50%;box-shadow:inset 0 0 0 3px var(--bg)}
+.dark .eyebrow::before{box-shadow:inset 0 0 0 3px var(--black)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;background:var(--black);color:var(--on-black);font-size:14px;font-weight:500;border:1px solid var(--black);transition:transform .2s,background .2s}
+.pill:hover{transform:translateY(-1px);background:#23232C}
+.pill.light{background:var(--surface);color:var(--ink);border-color:var(--surface)}
+.pill.light:hover{background:#ECECF1}
+.circle{width:44px;height:44px;border-radius:50%;background:var(--black);color:var(--on-black);display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--black);flex:none;transition:transform .2s}
+.circle svg{width:16px;height:16px}
+.arrow{width:22px;height:22px}
 
 /* nav */
-.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-2)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
-.brand{font-weight:700;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
-.brand .dot{width:10px;height:10px;background:var(--accent);border-radius:2px;transform:rotate(45deg)}
-.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px;color:var(--ink-2)}
-.nav ul a:hover{color:var(--ink)}
-.nav .cta{background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:999px;font-size:13px;font-weight:600}
-@media (max-width:720px){.nav ul{display:none}}
+.nav{position:absolute;inset:0 0 auto 0;z-index:10;padding-top:env(safe-area-inset-top,0px)}
+.hero .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:88px;gap:16px;min-height:0;padding-top:0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:19px;color:var(--ink)}
+.brand i{width:26px;height:26px;border-radius:7px;background:var(--black);display:inline-block;transform:skewX(-12deg)}
+.nav .loc{font-size:13px;color:var(--ink-2);text-align:center;line-height:1.4}
+.nav .r{display:flex;gap:8px;align-items:center}
+.nav .pill,.nav .circle{background:var(--black);color:var(--on-black)}
+@media (max-width:720px){.nav .loc{display:none}.hero .nav .wrap{height:72px}}
 
-/* hero: 3 levels only */
-.hero{padding-block:clamp(72px,14vw,160px) clamp(56px,8vw,96px)}
-.hero h1{font-size:clamp(44px,8vw,104px);letter-spacing:-.03em;line-height:1.02;max-width:14em}
-.hero .who{margin-top:clamp(24px,3vw,36px);font-size:clamp(15px,1.6vw,18px);color:var(--ink-2)}
-.hero .who b{color:var(--ink);font-weight:600}
-.hero .actions{margin-top:clamp(28px,4vw,44px);display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--surface);transition:transform .15s,opacity .15s}
-.btn:hover{transform:translateY(-1px)}
-.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.btn.primary:hover{opacity:.85}
-.btn.text{border:0;background:transparent;padding-inline:6px;color:var(--ink)}
-.btn.text::after{content:"›";font-size:20px;line-height:1;transition:transform .15s}
-.btn.text:hover::after{transform:translateX(3px)}
+/* hero */
+.hero{position:relative;min-height:min(92vh,880px);overflow:hidden;color:#fff;
+  background:linear-gradient(180deg,#F1EFF8 0%,#C9C2F3 22%,#5D4FD6 55%,#1B1656 82%,#08070F 100%)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero .veil{position:absolute;inset:0;background:radial-gradient(60% 50% at 50% 42%,rgba(255,255,255,.06),transparent 70%)}
+.hero .wrap{position:relative;min-height:inherit;display:grid;grid-template-rows:1fr auto;padding-top:120px;padding-bottom:0}
+.hero .mid{display:grid;grid-template-columns:1fr auto;align-items:end;gap:32px;padding-bottom:40px}
+.hero .lead{font-size:clamp(20px,2.3vw,30px);line-height:1.4;font-weight:400;max-width:19em;color:#fff;text-shadow:0 1px 20px rgba(0,0,0,.15)}
+.card-glass{width:min(380px,100%);background:var(--glass);border:1px solid var(--glass-line);backdrop-filter:blur(14px);border-radius:var(--r);padding:22px 22px 18px;color:#fff;display:flex;flex-direction:column;gap:38px;transition:transform .25s,background .25s}
+.card-glass:hover{transform:translateY(-3px);background:rgba(255,255,255,.2)}
+.card-glass p{margin:0;font-size:14.5px;line-height:1.5;color:rgba(255,255,255,.9)}
+.card-glass .b{display:flex;justify-content:space-between;align-items:end}
+.card-glass .n{font-size:38px;line-height:1;font-weight:400}
+.hero .giant{font-size:clamp(88px,15.5vw,236px);line-height:.82;font-weight:300;letter-spacing:-.04em;color:#fff;white-space:nowrap;transform:translateY(12%);margin-left:-.03em;text-shadow:0 0 60px rgba(0,0,0,.2)}
+@media (max-width:820px){.hero .mid{grid-template-columns:1fr}.hero .wrap{padding-top:100px}.hero{min-height:min(90vh,760px)}}
 
 /* sections */
-.sec{padding-block:clamp(56px,9vw,112px);border-top:1px solid var(--line)}
-.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:clamp(28px,4vw,48px)}
-.sec-h h2{font-size:clamp(34px,5vw,60px);letter-spacing:-.02em}
-
-/* work: uniform grid */
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:clamp(24px,3vw,36px)}
-.chip{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--ink-2);background:transparent;cursor:pointer;font-family:inherit}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.works{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(24px,4vw,48px) clamp(20px,3vw,32px)}
-@media (max-width:640px){.works{grid-template-columns:1fr}}
-.work{display:flex;flex-direction:column;gap:16px}
-.ph{position:relative;width:100%;max-width:100%;aspect-ratio:16/11;border-radius:12px;background:var(--surface);background-image:var(--hatch);border:1px dashed var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;transition:transform .2s}
-.work:hover .ph{transform:translateY(-3px)}
-.ph .label{font-size:13px;color:var(--mute);line-height:1.5}
-.ph .label b{display:block;color:var(--ink-2);font-weight:600}
-.work .meta{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
-.work h3{font-size:20px;font-weight:600}
-.work .k{font-size:13px;color:var(--mute);white-space:nowrap}
-.work .k a{color:var(--ink);font-weight:600}
-.work .k a::after{content:" ↗"}
-
-/* services */
-.services{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-@media (max-width:900px){.services{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:480px){.services{grid-template-columns:1fr}}
-.svc{background:var(--surface);padding:32px 28px;display:flex;flex-direction:column;gap:14px;min-height:240px}
-.svc .n{font-family:"Instrument Serif",serif;font-style:italic;font-size:30px;line-height:1;color:var(--mute)}
-.svc h3{font-size:20px;font-weight:600}
-.svc p{margin:0;font-size:14.5px;color:var(--ink-2)}
-.svc .for{margin-top:auto;font-size:12.5px;color:var(--mute)}
-
-/* method */
-.method{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,64px);align-items:start}
-@media (max-width:820px){.method{grid-template-columns:1fr}}
-.method h2{font-size:clamp(34px,5vw,60px);letter-spacing:-.02em}
-.method p{color:var(--ink-2);max-width:30em;margin:20px 0 0}
-.stack{display:grid;gap:12px}
-.layer{display:grid;grid-template-columns:48px 1fr;gap:18px;padding:22px 24px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
-.layer .ic{width:48px;height:48px;border-radius:10px;background:var(--tint);color:var(--ink);display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:500}
-.layer b{display:block;font-weight:600;margin-bottom:4px;font-size:16px}
-.layer span{font-size:14px;color:var(--ink-2)}
-.steps{margin-top:clamp(40px,6vw,72px);display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:step}
-@media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
-.step{border-top:1px solid var(--ink);padding-top:18px}
-.step::before{counter-increment:step;content:"0" counter(step);font-family:"Instrument Serif",serif;font-style:italic;font-size:26px;color:var(--mute);line-height:1}
-.step h4{margin:10px 0 4px;font-size:17px;font-weight:600}
-.step p{margin:0;font-size:14px;color:var(--ink-2)}
+.sec{padding-block:clamp(72px,9vw,128px)}
+.sec.dark{background:var(--black);color:var(--on-black)}
+.sec.dark .eyebrow{color:var(--on-black-2)}
+.head{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;margin-bottom:clamp(32px,4vw,56px)}
+.head h2{font-size:clamp(34px,4.6vw,64px);margin-top:14px;max-width:12em}
+@media (max-width:640px){.head{grid-template-columns:1fr}}
 
 /* about */
-.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,64px);align-items:start}
-@media (max-width:820px){.about{grid-template-columns:1fr}}
-.about .ph{aspect-ratio:3/4;border-radius:18px}
-.about h2{font-size:clamp(34px,5vw,60px);letter-spacing:-.02em;margin-bottom:24px}
-.about p{color:var(--ink-2);max-width:34em;margin:0 0 16px}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,80px);align-items:start}
+@media (max-width:900px){.about{grid-template-columns:1fr}}
+.about h2{font-size:clamp(32px,4vw,56px);margin-top:14px}
+.about .pill{margin-top:36px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:end}
+.ring{aspect-ratio:1;max-width:220px;border-radius:50%;border:18px solid #D9D9E0;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:300;position:relative;justify-self:center;background:var(--bg)}
+.ring::after{content:"";position:absolute;inset:14px;border:1px solid var(--ink);border-radius:50%}
+.stat-card{background:var(--surface);border-radius:var(--r);padding:28px 26px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between}
+.stat-card .n{font-size:clamp(44px,5vw,64px);font-weight:300;line-height:1;letter-spacing:-.03em}
+.stat-card p{margin:0;font-size:14px;color:var(--ink-2);line-height:1.5}
+
+/* work */
+.track{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:980px){.track{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.track{grid-template-columns:1fr}}
+.work{background:var(--surface);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.work:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(27,22,86,.35)}
+.work .img{aspect-ratio:4/3;background:linear-gradient(135deg,var(--v4),var(--v3) 60%,var(--v2));position:relative;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.8);font-size:13px;text-align:center;padding:16px;overflow:hidden}
+.work .img::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 14px,rgba(255,255,255,.05) 14px 15px)}
+.work .img.b{background:linear-gradient(160deg,#0B0B0F,#2B2740)}
+.work .img.c{background:linear-gradient(160deg,#EDEBFA,#C9C2F3)}
+.work .img.c{color:var(--ink-2)}
+.work .img b{display:block;font-size:15px;font-weight:500;margin-bottom:4px;color:inherit}
+.work .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 20px}
+.work h3{font-size:19px;font-weight:500;letter-spacing:-.01em}
+.tags{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.tag{font-size:12px;padding:6px 11px;border:1px solid var(--line);border-radius:999px;color:var(--ink-2);white-space:nowrap}
+.dark .tag{border-color:#2A2A33;color:var(--on-black-2)}
+
+/* services accordion */
+.acc{display:grid;gap:16px}
+.svc{border:1px solid #23232C;border-radius:var(--r);overflow:hidden;background:#0F0F14}
+.svc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;font-size:clamp(20px,2.2vw,28px);font-weight:400;letter-spacing:-.01em}
+.svc summary::-webkit-details-marker{display:none}
+.svc summary .circle{background:transparent;border-color:#3A3A44;color:var(--on-black);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.svc[open] summary .circle{transform:rotate(45deg)}
+.svc .body{display:grid;grid-template-columns:1fr 1.1fr;gap:24px;padding:0 24px 24px;border-top:1px solid #23232C;padding-top:24px}
+@media (max-width:760px){.svc .body{grid-template-columns:1fr}}
+.svc .body p{margin:0;font-size:15px;color:var(--on-black-2);max-width:26em;line-height:1.6}
+.svc .body .tags{justify-content:flex-start;margin-top:18px}
+.svc .pic{aspect-ratio:16/10;border-radius:10px;background:linear-gradient(135deg,var(--v4),var(--v3) 60%,var(--v2));display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(255,255,255,.8)}
+
+/* method */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:900px){.tiles{grid-template-columns:1fr}}
+.tile{border-radius:var(--r);padding:28px 26px;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;position:relative;overflow:hidden}
+.tile.g{background:linear-gradient(160deg,#5D4FD6,#1B1656 70%,#08070F);color:#fff}
+.tile.k{background:var(--black);color:var(--on-black)}
+.tile.w{background:var(--surface);color:var(--ink)}
+.tile .k2{font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.7;position:absolute;top:24px;left:26px}
+.tile h3{font-size:34px;font-weight:300;letter-spacing:-.02em}
+.tile h4{font-size:18px;font-weight:500}
+.tile p{margin:0;font-size:14px;line-height:1.55;opacity:.8}
+.tile.w p{color:var(--ink-2);opacity:1}
+.steps{margin-top:20px;background:var(--surface);border-radius:var(--r);padding:clamp(24px,3vw,40px);display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
+.step .n{font-size:13px;color:var(--mute);letter-spacing:.1em}
+.step h4{font-size:18px;font-weight:500;margin-top:10px}
+.step p{margin:6px 0 0;font-size:14px;color:var(--ink-2)}
+
+/* bio */
+.bio{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,80px);align-items:start}
+@media (max-width:900px){.bio{grid-template-columns:1fr}}
+.bio .photo{aspect-ratio:3/4;border-radius:var(--r-lg);background:linear-gradient(160deg,#C9C2F3,#5D4FD6 70%,#1B1656);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px}
+.bio h2{font-size:clamp(32px,4vw,56px);margin-top:14px}
+.bio p{color:var(--ink-2);max-width:34em;margin:0 0 16px}
 .timeline{margin:32px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
 .timeline li{display:grid;grid-template-columns:100px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
-.timeline .y{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--mute);padding-top:4px}
-.timeline b{font-weight:600}
+.timeline .y{font-size:12px;color:var(--mute);padding-top:4px;letter-spacing:.04em}
+.timeline b{font-weight:500}
 .timeline span{display:block;font-size:13px;color:var(--mute)}
-.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
-.badge{font-size:12px;border:1px solid var(--line);padding:5px 10px;border-radius:6px;color:var(--ink-2)}
 
-/* contact */
-.contact{background:var(--ink);color:var(--bg);border-radius:24px;padding:clamp(36px,6vw,72px);display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
-@media (max-width:820px){.contact{grid-template-columns:1fr}}
-.contact h2{font-size:clamp(40px,6vw,76px);letter-spacing:-.02em;line-height:1.05}
-.contact p{opacity:.72;max-width:28em;margin:18px 0 0}
-.contact .rows{display:grid;gap:10px}
-.row{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 16px}
-.row .k{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;opacity:.6}
-.row .v{font-weight:600;user-select:all}
-.row button{font-family:inherit;font-size:12px;border:1px solid rgba(255,255,255,.25);background:transparent;color:inherit;border-radius:999px;padding:5px 10px;cursor:pointer}
-.footer{padding:32px 0 48px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--mute)}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
-.reveal.in,.no-js .reveal{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.btn,.work .ph,.reveal{transition:none}.reveal{opacity:1;transform:none}}
+/* footer */
+.foot{background:linear-gradient(180deg,#F5F5F7 0%,#EDEBFA 22%,#5D4FD6 58%,#1B1656 80%,#08070F 100%);color:#fff;padding-top:clamp(72px,9vw,128px)}
+.foot .cta{text-align:center;color:var(--ink);max-width:40em;margin:0 auto}
+.foot .cta h2{font-size:clamp(40px,6vw,80px)}
+.foot .cta p{color:var(--ink-2);margin:18px auto 30px;max-width:30em}
+.foot .cols{display:grid;grid-template-columns:1.2fr .6fr .6fr .9fr;gap:32px;margin-top:clamp(120px,16vw,220px);padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.14)}
+@media (max-width:820px){.foot .cols{grid-template-columns:1fr 1fr}}
+.foot .brand{color:#fff}.foot .brand i{background:#fff}
+.foot .cols p{font-size:14px;color:rgba(255,255,255,.75);max-width:22em;margin:14px 0 0}
+.foot .cols ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:14.5px}
+.foot .cols h5{margin:0 0 12px;font-size:14px;font-weight:600}
+.foot .cols .v{user-select:all}
+.foot .cols button{font:inherit;font-size:12px;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;border-radius:999px;padding:3px 9px;cursor:pointer;margin-left:8px}
+.foot .end{display:flex;justify-content:center;gap:8px;padding:28px 0 40px;font-size:13px;color:rgba(255,255,255,.55);flex-wrap:wrap;text-align:center}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.work,.pill,.card-glass{transition:none}}
 </style>
 </head>
 <body>
 
-<header class="nav">
+<header class="hero" id="top">
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="veil"></div>
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="#top"><i></i>Anna Gao</a>
+      <div class="loc">上海 · 远程协作<br>Brand × AI Product Design</div>
+      <div class="r">
+        <a class="circle" href="#work" aria-label="作品"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 5h12M2 11h12"/></svg></a>
+        <a class="pill" href="#contact">找我聊聊</a>
+      </div>
+    </div>
+  </nav>
   <div class="wrap">
-    <a class="brand" href="#top"><span class="dot"></span>Anna Gao</a>
-    <ul>
-      <li><a href="#work">作品</a></li>
-      <li><a href="#services">服务</a></li>
-      <li><a href="#method">方法</a></li>
-      <li><a href="#about">关于</a></li>
-    </ul>
-    <a class="cta" href="#contact">找我聊聊</a>
+    <div class="mid">
+      <p class="lead">品牌与 AI 产品设计师。建筑出身，在 FLock.io 与和光科技负责设计。</p>
+      <a class="card-glass" href="#work">
+        <p>精选作品，覆盖 AI 产品、品牌与活动视觉</p>
+        <div class="b"><span class="n">8</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
+      </a>
+    </div>
+    <div class="giant" aria-hidden="true">DESIGN</div>
   </div>
 </header>
 
-<main id="top">
-  <section class="hero wrap">
-    <h1 class="serif">品牌与 <em>AI 产品</em>设计师</h1>
-    <p class="who"><b>高旖伟 Anna Gao</b> · Design Lead @ FLock.io / 和光科技 · 建筑师出身</p>
-    <div class="actions">
-      <a class="btn primary" href="#work">看作品</a>
-      <a class="btn text" href="#contact">聊一个项目</a>
-    </div>
-  </section>
-
-  <section id="work" class="sec">
-    <div class="wrap">
-      <div class="sec-h"><h2 class="serif">精选<em>作品</em></h2><span class="eyebrow">Selected work · 8</span></div>
-      <div class="filters" role="group" aria-label="筛选作品">
-        <button class="chip" aria-pressed="true" data-f="all">全部</button>
-        <button class="chip" aria-pressed="false" data-f="product">AI 产品 &amp; 网站</button>
-        <button class="chip" aria-pressed="false" data-f="brand">品牌 &amp; Logo</button>
-        <button class="chip" aria-pressed="false" data-f="poster">海报 &amp; 活动</button>
+<main>
+  <section class="sec">
+    <div class="wrap about">
+      <div class="reveal">
+        <div class="eyebrow">关于我</div>
+        <h2>把建筑训练带来的系统思维，用在品牌与 AI 产品上。</h2>
+        <a class="pill" href="#about">了解更多</a>
       </div>
-      <div class="works">
-        <article class="work" data-t="product">
-          <div class="ph"><div class="label"><b>FLock.io 官网 + chat.flock.io</b>占位 2400×1650</div></div>
-          <div class="meta"><h3>FLock.io 官网与 AI 共创平台</h3><span class="k"><a href="https://www.flock.io/" target="_blank" rel="noopener">访问</a></span></div>
-        </article>
-        <article class="work" data-t="product">
-          <div class="ph"><div class="label"><b>和光科技</b>占位 2400×1650</div></div>
-          <div class="meta"><h3>和光科技 品牌系统</h3><span class="k">2026</span></div>
-        </article>
-        <article class="work" data-t="brand">
-          <div class="ph"><div class="label"><b>壮游户外 GTO</b>占位 2400×1650</div></div>
-          <div class="meta"><h3>壮游户外 GTO 品牌视觉</h3><span class="k">Logo · VI</span></div>
-        </article>
-        <article class="work" data-t="brand">
-          <div class="ph"><div class="label"><b>UltraX</b>占位 2400×1650</div></div>
-          <div class="meta"><h3>UltraX 标志与平台</h3><span class="k">Logo · Web</span></div>
-        </article>
-        <article class="work" data-t="brand">
-          <div class="ph"><div class="label"><b>FMGO</b>占位 2400×1650</div></div>
-          <div class="meta"><h3>FMGO 品牌物料</h3><span class="k">物料 · Deck</span></div>
-        </article>
-        <article class="work" data-t="poster">
-          <div class="ph"><div class="label"><b>FLock 社媒海报</b>占位 2400×1650</div></div>
-          <div class="meta"><h3>FLock 社媒海报系列</h3><span class="k">2023 – 2026</span></div>
-        </article>
-        <article class="work" data-t="poster">
-          <div class="ph"><div class="label"><b>Qwen × Skyst Hackathon</b>占位 2400×1650</div></div>
-          <div class="meta"><h3>Qwen × Skyst Hackathon 活动视觉</h3><span class="k">2025</span></div>
-        </article>
-        <article class="work" data-t="poster">
-          <div class="ph"><div class="label"><b>FOMO</b>占位 2400×1650</div></div>
-          <div class="meta"><h3>FOMO 产品识别</h3><span class="k">品牌</span></div>
-        </article>
+      <div class="stats reveal">
+        <div class="ring">10+</div>
+        <div class="stat-card"><div class="n">8</div><p>精选项目，含 3 个已上线网站与平台</p></div>
       </div>
     </div>
   </section>
 
-  <section id="services" class="sec">
+  <section id="work" class="sec" style="padding-top:0">
     <div class="wrap">
-      <div class="sec-h"><h2 class="serif">服务<em>范围</em></h2><span class="eyebrow">Services</span></div>
-      <div class="services">
-        <div class="svc"><div class="n">a</div><h3>活动海报与物料</h3><p>线上海报、易拉宝、Banner、推文头图及活动周边，统一视觉、多尺寸一次交付。</p><div class="for">社区活动 · Hackathon · 发布会</div></div>
-        <div class="svc"><div class="n">b</div><h3>品牌视觉系统</h3><p>标志、色彩与字体系统、品牌规范、名片与印刷品，为新品牌建立完整起点。</p><div class="for">新品牌 · 产品线 · 工作室</div></div>
-        <div class="svc"><div class="n">c</div><h3>AI 产品界面</h3><p>从零建立设计系统，产出高保真界面，并与研发协作落地。三年 AI 与 Web3 产品经验。</p><div class="for">AI 初创团队 · 平台型产品</div></div>
-        <div class="svc"><div class="n">d</div><h3>官网与落地页</h3><p>桌面与移动端视觉设计，配合前端完整还原上线。多个官网正在运行。</p><div class="for">公司官网 · 产品发布页</div></div>
+      <div class="head reveal"><div><div class="eyebrow">精选作品</div><h2>做过的，和正在做的。</h2></div><a class="pill" href="#work">全部作品</a></div>
+      <div class="track">
+        <article class="work reveal"><div class="img"><div><b>FLock.io 官网 + chat.flock.io</b>占位 1600×1200</div></div><div class="bar"><h3>FLock.io</h3><div class="tags"><span class="tag">AI 产品</span><span class="tag">官网</span></div></div></article>
+        <article class="work reveal"><div class="img c"><div><b>和光科技</b>占位 1600×1200</div></div><div class="bar"><h3>和光科技 品牌系统</h3><div class="tags"><span class="tag">品牌</span></div></div></article>
+        <article class="work reveal"><div class="img b"><div><b>壮游户外 GTO</b>占位 1600×1200</div></div><div class="bar"><h3>壮游户外</h3><div class="tags"><span class="tag">Logo</span><span class="tag">VI</span></div></div></article>
+        <article class="work reveal"><div class="img"><div><b>UltraX</b>占位 1600×1200</div></div><div class="bar"><h3>UltraX</h3><div class="tags"><span class="tag">Logo</span><span class="tag">Web</span></div></div></article>
+        <article class="work reveal"><div class="img b"><div><b>FMGO</b>占位 1600×1200</div></div><div class="bar"><h3>FMGO 品牌物料</h3><div class="tags"><span class="tag">物料</span></div></div></article>
+        <article class="work reveal"><div class="img c"><div><b>FLock 社媒海报</b>占位 1600×1200</div></div><div class="bar"><h3>FLock 海报系列</h3><div class="tags"><span class="tag">海报</span></div></div></article>
+        <article class="work reveal"><div class="img"><div><b>Qwen × Skyst Hackathon</b>占位 1600×1200</div></div><div class="bar"><h3>Qwen Hackathon</h3><div class="tags"><span class="tag">活动</span></div></div></article>
+        <article class="work reveal"><div class="img b"><div><b>FOMO</b>占位 1600×1200</div></div><div class="bar"><h3>FOMO 产品识别</h3><div class="tags"><span class="tag">品牌</span></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="sec dark">
+    <div class="wrap">
+      <div class="head reveal" style="text-align:center;grid-template-columns:1fr;justify-items:center"><div><div class="eyebrow" style="justify-content:center">服务</div><h2>四类工作，一套方法。</h2></div><a class="pill light" href="#contact">聊一个项目</a></div>
+      <div class="acc reveal">
+        <details class="svc" open><summary>活动海报与物料<span class="circle"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3v10M3 8h10"/></svg></span></summary><div class="body"><div><p>线上海报、易拉宝、Banner、推文头图及活动周边。统一视觉，多尺寸一次交付。</p><div class="tags"><span class="tag">社区活动</span><span class="tag">Hackathon</span><span class="tag">发布会</span></div></div><div class="pic">占位：海报拼贴</div></div></details>
+        <details class="svc"><summary>品牌视觉系统<span class="circle"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3v10M3 8h10"/></svg></span></summary><div class="body"><div><p>标志、色彩与字体系统、品牌规范、名片与印刷品。为新品牌建立完整起点。</p><div class="tags"><span class="tag">新品牌</span><span class="tag">产品线</span></div></div><div class="pic">占位：VI 应用</div></div></details>
+        <details class="svc"><summary>AI 产品界面<span class="circle"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3v10M3 8h10"/></svg></span></summary><div class="body"><div><p>从零建立设计系统，产出高保真界面，并与研发协作落地。三年 AI 与 Web3 产品经验。</p><div class="tags"><span class="tag">设计系统</span><span class="tag">平台</span></div></div><div class="pic">占位：界面截图</div></div></details>
+        <details class="svc"><summary>官网与落地页<span class="circle"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3v10M3 8h10"/></svg></span></summary><div class="body"><div><p>桌面与移动端视觉设计，配合前端完整还原上线。多个官网正在运行。</p><div class="tags"><span class="tag">公司官网</span><span class="tag">发布页</span></div></div><div class="pic">占位：官网截图</div></div></details>
       </div>
     </div>
   </section>
 
   <section id="method" class="sec">
     <div class="wrap">
-      <div class="method">
-        <div>
-          <div class="eyebrow">Method</div>
-          <h2 class="serif" style="margin-top:14px">系统承担重复，<br><em>人负责判断。</em></h2>
-          <p>AI 知识库、素材库与设计系统构成工作流的基础层，负责规范沉淀与素材复用；方向判断与审美把控由设计师完成。设计师的时间用在需要判断的地方。</p>
-        </div>
-        <div class="stack">
-          <div class="layer"><div class="ic">KB</div><div><b>AI 知识库</b><span>品牌规范、历史决策与行业参考结构化存储，新项目自第一天起具备完整上下文。</span></div></div>
-          <div class="layer"><div class="ic">LIB</div><div><b>素材库</b><span>版式、图形、Prompt 与场景模板可直接复用，同类需求无需从零开始。</span></div></div>
-          <div class="layer"><div class="ic">DS</div><div><b>设计系统</b><span>色彩、字体与组件一次定义，后续每次交付均在既定系统内完成。</span></div></div>
-        </div>
+      <div class="head reveal"><div><div class="eyebrow">工作方法</div><h2>系统承担重复，人负责判断。</h2></div></div>
+      <div class="tiles">
+        <div class="tile g reveal"><span class="k2">Knowledge</span><h3>AI 知识库</h3><p>品牌规范、历史决策与行业参考结构化存储，新项目自第一天起具备完整上下文。</p></div>
+        <div class="tile k reveal"><span class="k2">Library</span><h3>素材库</h3><p>版式、图形、Prompt 与场景模板可直接复用，同类需求无需从零开始。</p></div>
+        <div class="tile w reveal"><span class="k2">System</span><h3>设计系统</h3><p>色彩、字体与组件一次定义，后续每次交付均在既定系统内完成。设计师的时间用在需要判断的地方。</p></div>
       </div>
-      <div class="steps">
-        <div class="step"><h4>需求沟通</h4><p>30 分钟明确目标、受众、交付物与时间。</p></div>
-        <div class="step"><h4>报价确认</h4><p>确定范围、周期与修改轮次后启动。</p></div>
-        <div class="step"><h4>初稿与修改</h4><p>按约定时间提交初稿，含两轮修改。</p></div>
-        <div class="step"><h4>交付源文件</h4><p>提供全部尺寸与源文件，可直接使用。</p></div>
+      <div class="steps reveal">
+        <div class="step"><div class="n">01</div><h4>需求沟通</h4><p>30 分钟明确目标、受众、交付物与时间。</p></div>
+        <div class="step"><div class="n">02</div><h4>报价确认</h4><p>确定范围、周期与修改轮次后启动。</p></div>
+        <div class="step"><div class="n">03</div><h4>初稿与修改</h4><p>按约定时间提交初稿，含两轮修改。</p></div>
+        <div class="step"><div class="n">04</div><h4>交付源文件</h4><p>提供全部尺寸与源文件，可直接使用。</p></div>
       </div>
     </div>
   </section>
 
-  <section id="about" class="sec">
-    <div class="wrap">
-      <div class="about">
-        <div class="ph"><div class="label"><b>头像 / 工作照</b>占位 1200×1600</div></div>
-        <div>
-          <div class="eyebrow">About</div>
-          <h2 class="serif" style="margin-top:14px">七年建筑，<br><em>七年设计。</em></h2>
-          <p>宾夕法尼亚大学建筑学硕士，利物浦大学建筑学一等荣誉学士，美国纽约州注册建筑师。建筑训练带来的系统思维与对比例、材料的敏感，现在用于品牌与产品设计。</p>
-          <p>2023 年起任 FLock.io 设计负责人，负责 AI 共创平台的设计系统、官网与品牌视觉；同年创立橘阵多元设计工作室，为 400 盒子、9grid、UltraX 等客户交付已上线的产品与官网。2026 年加入和光科技任 Design Lead。</p>
-          <ul class="timeline">
-            <li><span class="y">2026 –</span><div><b>和光科技 · Design Lead</b><span>品牌系统、官网、AI 产品</span></div></li>
-            <li><span class="y">2023 –</span><div><b>FLock.io · 设计负责人</b><span>设计系统、平台界面、官网、品牌视觉</span></div></li>
-            <li><span class="y">2023 –</span><div><b>橘阵多元设计工作室 · 主理人</b><span>400 盒子、9grid、UltraX、缤瓜、壮游户外</span></div></li>
-            <li><span class="y">2015 – 18</span><div><b>宾夕法尼亚大学 · 建筑学硕士</b><span>综合性产品设计方向</span></div></li>
-            <li><span class="y">2011 – 15</span><div><b>利物浦大学 · 建筑学一等荣誉学士</b><span>RIBA Part I</span></div></li>
-          </ul>
-          <div class="badges"><span class="badge">AIA 注册建筑师</span><span class="badge">LEED AP BD+C</span><span class="badge">Figma</span><span class="badge">Adobe</span><span class="badge">AI 生成工具</span><span class="badge">中 / 英</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="sec">
-    <div class="wrap">
-      <div class="contact">
-        <div>
-          <div class="eyebrow" style="color:inherit;opacity:.6">Contact</div>
-          <h2 class="serif" style="margin-top:14px">有想法，<br><em>随时联系。</em></h2>
-          <p>活动海报、品牌视觉、AI 产品设计，或仅是认识一下。一般 24 小时内回复。</p>
-        </div>
-        <div class="rows">
-          <div class="row"><div><div class="k">EMAIL</div><div class="v" id="email">annayiweigao@163.com</div></div><button type="button" data-copy="email">复制</button></div>
-          <div class="row"><div><div class="k">WECHAT</div><div class="v" id="wechat">【微信号占位】</div></div><button type="button" data-copy="wechat">复制</button></div>
-          <div class="row"><div><div class="k">PRICING</div><div class="v">报价单 PDF</div></div><span class="k">留言索取</span></div>
-        </div>
-      </div>
-      <div class="footer">
-        <span>© 2026 Anna Gao · Brand × AI Product Design</span>
-        <span>Shanghai · Remote · 中 / EN</span>
+  <section id="about" class="sec" style="padding-top:0">
+    <div class="wrap bio">
+      <div class="photo reveal">占位：头像 / 工作照 1200×1600</div>
+      <div class="reveal">
+        <div class="eyebrow">背景</div>
+        <h2>七年建筑，七年设计。</h2>
+        <p style="margin-top:20px">宾夕法尼亚大学建筑学硕士，利物浦大学建筑学一等荣誉学士，美国纽约州注册建筑师。建筑训练带来的系统思维与对比例、材料的敏感，现在用于品牌与产品设计。</p>
+        <p>2023 年起任 FLock.io 设计负责人，负责 AI 共创平台的设计系统、官网与品牌视觉；同年创立橘阵多元设计工作室，为 400 盒子、9grid、UltraX 等客户交付已上线的产品与官网。2026 年加入和光科技任 Design Lead。</p>
+        <ul class="timeline">
+          <li><span class="y">2026 –</span><div><b>和光科技 · Design Lead</b><span>品牌系统、官网、AI 产品</span></div></li>
+          <li><span class="y">2023 –</span><div><b>FLock.io · 设计负责人</b><span>设计系统、平台界面、官网、品牌视觉</span></div></li>
+          <li><span class="y">2023 –</span><div><b>橘阵多元设计工作室 · 主理人</b><span>400 盒子、9grid、UltraX、缤瓜、壮游户外</span></div></li>
+          <li><span class="y">2015 – 18</span><div><b>宾夕法尼亚大学 · 建筑学硕士</b><span>综合性产品设计方向</span></div></li>
+          <li><span class="y">2011 – 15</span><div><b>利物浦大学 · 建筑学一等荣誉学士</b><span>RIBA Part I</span></div></li>
+        </ul>
       </div>
     </div>
   </section>
 </main>
 
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <div class="cta reveal">
+      <h2>有想法，随时联系。</h2>
+      <p>活动海报、品牌视觉、AI 产品设计，或仅是认识一下。一般 24 小时内回复。</p>
+      <a class="pill" href="#contact">发邮件给我</a>
+    </div>
+    <div class="cols">
+      <div><a class="brand" href="#top"><i></i>Anna Gao</a><p>品牌与 AI 产品设计师。建筑出身，在 FLock.io 与和光科技负责设计。</p></div>
+      <div><h5>导航</h5><ul><li><a href="#work">作品</a></li><li><a href="#services">服务</a></li><li><a href="#method">方法</a></li><li><a href="#about">背景</a></li></ul></div>
+      <div><h5>外部</h5><ul><li><a href="https://www.flock.io/" target="_blank" rel="noopener">FLock.io</a></li><li><a href="https://github.com/Annagaogao/portfolio" target="_blank" rel="noopener">GitHub</a></li></ul></div>
+      <div><h5>联系</h5><ul><li><span class="v" id="email">annayiweigao@163.com</span><button type="button" data-copy="email">复制</button></li><li><span class="v" id="wechat">微信：【占位】</span><button type="button" data-copy="wechat">复制</button></li><li>报价单 PDF，留言索取</li></ul></div>
+    </div>
+    <div class="end"><span>© 2026 Anna Gao</span><span>·</span><span>Shanghai · Remote · 中 / EN</span></div>
+  </div>
+</footer>
+
 <script>
 (function(){
-  var els=document.querySelectorAll('.sec .wrap > *, .hero > *');
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
-    els.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight){return}el.classList.add('reveal');io.observe(el)});
-  }
-  var chips=document.querySelectorAll('.chip'),works=document.querySelectorAll('.work');
-  chips.forEach(function(c){c.addEventListener('click',function(){
-    chips.forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false')});
-    var f=c.dataset.f;works.forEach(function(w){w.hidden=!(f==='all'||w.dataset.t===f)});
-  })});
-  document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
-    var el=document.getElementById(b.dataset.copy),t=el.textContent.trim();
+  /* contour field on the hero: slow, quiet, replaceable by a photo later */
+  var c=document.getElementById('field'),x=c.getContext('2d'),W,H,t=0,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){var r=c.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);W=c.width=r.width*d;H=c.height=r.height*d;x.setTransform(d,0,0,d,0,0);W=r.width;H=r.height}
+  function draw(){x.clearRect(0,0,W,H);var cx=W*.52,cy=H*.46,R=Math.min(W,H)*.42;
+    for(var i=0;i<26;i++){var r=R*(.18+i*.036),a=.06+.16*(1-i/26);x.beginPath();
+      for(var k=0;k<=180;k++){var th=k/180*Math.PI*2,w=Math.sin(th*3+t*.6+i*.35)*.08+Math.sin(th*5-t*.4+i*.2)*.04,rr=r*(1+w);var px=cx+Math.cos(th)*rr*1.05,py=cy+Math.sin(th)*rr*.86;k?x.lineTo(px,py):x.moveTo(px,py)}
+      x.closePath();x.strokeStyle='rgba(255,255,255,'+a+')';x.lineWidth=1;x.stroke()}
+    if(!reduce){t+=.006;requestAnimationFrame(draw)}}
+  size();addEventListener('resize',function(){size();if(reduce)draw()});draw();
+
+  /* reveal */
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -10% 0px'});
+    els.forEach(function(el){if(el.getBoundingClientRect().top<innerHeight)el.classList.add('in');else io.observe(el)})}else els.forEach(function(el){el.classList.add('in')});
+
+  /* one accordion open at a time */
+  var ds=document.querySelectorAll('.svc');ds.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)ds.forEach(function(o){if(o!==d)o.open=false})})});
+
+  /* copy */
+  document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){var el=document.getElementById(b.dataset.copy),tx=el.textContent.replace(/^微信：/,'').trim();
     function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)}
-    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){b.textContent='已复制';setTimeout(function(){b.textContent='复制'},1500)}).catch(sel)}else sel();
-  })});
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(tx).then(function(){b.textContent='已复制';setTimeout(function(){b.textContent='复制'},1500)}).catch(sel)}else sel()})});
 })();
 </script>
 
