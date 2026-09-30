@@ -201,9 +201,12 @@ h2 em{font-style:normal;color:#8A8A96}
 .foot .end{display:flex;justify-content:center;gap:8px;padding:30px 0 65px;font-size:16px;color:rgba(255,255,255,.6);flex-wrap:wrap;text-align:center}
 
 /* reveal */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
 .reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.work,.pill,.card-glass{transition:none}}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.hero .lead,.hero .card-glass,.hero .giant,.hero .nav{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero .nav{animation-delay:.05s}.hero .lead{animation-delay:.25s}.hero .card-glass{animation-delay:.45s}.hero .giant{animation-delay:.6s;animation-duration:1.1s}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero .lead,.hero .card-glass,.hero .giant,.hero .nav{animation:none}.work,.pill,.card-glass{transition:none}}
 </style>
 </head>
 <body>
@@ -236,12 +239,12 @@ h2 em{font-style:normal;color:#8A8A96}
 <main>
   <section class="sec">
     <div class="wrap about">
-      <div class="reveal">
+      <div>
         <div class="eyebrow">关于我</div>
         <h2>把建筑训练带来的系统思维，<em>用在品牌与 AI 产品上。</em></h2>
         <a class="pill" href="#about">了解更多</a>
       </div>
-      <div class="stats reveal">
+      <div class="stats">
         <div class="lbl">年设计训练，建筑到品牌与产品</div>
         <div class="line"></div>
         <div class="ring-wrap"><div class="ring"></div><div class="in">10+</div></div>
@@ -252,7 +255,7 @@ h2 em{font-style:normal;color:#8A8A96}
 
   <section id="work" class="sec" style="padding-top:0">
     <div class="wrap">
-      <div class="head reveal"><div><div class="eyebrow">精选作品</div><h2>做过的，<em>和正在做的。</em></h2></div><div class="btns"><button class="circle" type="button" data-dir="-1" aria-label="上一个"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 3 5 8l5 5"/></svg></button><button class="circle" type="button" data-dir="1" aria-label="下一个"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m6 3 5 5-5 5"/></svg></button><a class="pill" href="#work">全部作品</a></div></div>
+      <div class="head"><div><div class="eyebrow">精选作品</div><h2>做过的，<em>和正在做的。</em></h2></div><div class="btns"><button class="circle" type="button" data-dir="-1" aria-label="上一个"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 3 5 8l5 5"/></svg></button><button class="circle" type="button" data-dir="1" aria-label="下一个"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m6 3 5 5-5 5"/></svg></button><a class="pill" href="#work">全部作品</a></div></div>
     </div>
     <div class="gallery"><div class="track">
         <article class="work"><div class="img"><div><b>FLock.io 官网 + chat.flock.io</b>占位 1600×1200</div></div><div class="bar"><h3>FLock.io</h3><span class="cat">AI 产品</span></div></article>
@@ -268,8 +271,8 @@ h2 em{font-style:normal;color:#8A8A96}
 
   <section id="services" class="sec dark">
     <div class="wrap">
-      <div class="head reveal" style="text-align:center;grid-template-columns:1fr;justify-items:center"><div><div class="eyebrow" style="justify-content:center">服务</div><h2>四类工作，<em>一套方法。</em></h2></div><a class="pill light" href="#contact">聊一个项目</a></div>
-      <div class="acc reveal">
+      <div class="head" style="text-align:center;grid-template-columns:1fr;justify-items:center"><div><div class="eyebrow" style="justify-content:center">服务</div><h2>四类工作，<em>一套方法。</em></h2></div><a class="pill light" href="#contact">聊一个项目</a></div>
+      <div class="acc">
         <div class="svc"><div class="col1"><h3>活动海报<br>与物料</h3><a class="circle" href="#work" aria-label="查看相关作品"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12 12 4M6 4h6v6"/></svg></a></div><div class="col2"><p>线上海报、易拉宝、Banner、推文头图及活动周边。统一视觉，多尺寸一次交付。</p><div class="tags"><span class="tag">社区活动</span><span class="tag">Hackathon</span></div></div><div class="pic">占位：海报拼贴</div></div>
         <div class="svc"><div class="col1"><h3>品牌视觉<br>系统</h3><a class="circle" href="#work" aria-label="查看相关作品"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12 12 4M6 4h6v6"/></svg></a></div><div class="col2"><p>标志、色彩与字体系统、品牌规范、名片与印刷品。为新品牌建立完整起点。</p><div class="tags"><span class="tag">新品牌</span><span class="tag">产品线</span></div></div><div class="pic">占位：VI 应用</div></div>
         <div class="svc"><div class="col1"><h3>AI 产品<br>界面</h3><a class="circle" href="#work" aria-label="查看相关作品"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12 12 4M6 4h6v6"/></svg></a></div><div class="col2"><p>从零建立设计系统，产出高保真界面，并与研发协作落地。三年 AI 与 Web3 产品经验。</p><div class="tags"><span class="tag">设计系统</span><span class="tag">平台</span></div></div><div class="pic">占位：界面截图</div></div>
@@ -280,13 +283,13 @@ h2 em{font-style:normal;color:#8A8A96}
 
   <section id="method" class="sec">
     <div class="wrap">
-      <div class="head reveal"><div><div class="eyebrow">工作方法</div><h2>系统承担重复，<em>人负责判断。</em></h2></div><a class="pill" href="#contact">了解更多</a></div>
+      <div class="head"><div><div class="eyebrow">工作方法</div><h2>系统承担重复，<em>人负责判断。</em></h2></div><a class="pill" href="#contact">了解更多</a></div>
       <div class="tiles" id="tiles">
         <div class="tile g"><div class="art"><div></div></div><div class="txt"><div class="big">KB</div><h4>AI 知识库</h4><p>品牌规范、历史决策与行业参考结构化存储，新项目自第一天起具备完整上下文。</p></div></div>
         <div class="tile k"><div class="art"><div></div></div><div class="txt"><div class="big">LIB</div><h4>素材库</h4><p>版式、图形、Prompt 与场景模板可直接复用，同类需求无需从零开始。</p></div></div>
         <div class="tile w"><div class="art"><div></div></div><div class="txt"><div class="big">DS</div><h4>设计系统</h4><p>色彩、字体与组件一次定义，后续每次交付均在既定系统内完成。设计师的时间用在需要判断的地方。</p></div></div>
       </div>
-      <div class="head reveal" style="margin-top:clamp(72px,10vw,140px)"><div><div class="eyebrow">合作流程</div><h2>四步，<em>从沟通到交付。</em></h2></div></div>
+      <div class="head" style="margin-top:clamp(72px,10vw,140px)"><div><div class="eyebrow">合作流程</div><h2>四步，<em>从沟通到交付。</em></h2></div></div>
       <div class="steps" id="steps">
         <div class="step"><div class="sym">✦</div><div class="n">01</div><h4>需求沟通</h4><p>30 分钟明确目标、受众、交付物与时间。</p></div>
         <div class="step"><div class="sym">✳</div><div class="n">02</div><h4>报价确认</h4><p>确定范围、周期与修改轮次后启动。</p></div>
@@ -298,8 +301,8 @@ h2 em{font-style:normal;color:#8A8A96}
 
   <section id="about" class="sec" style="padding-top:0">
     <div class="wrap bio">
-      <div class="photo reveal">占位：头像 / 工作照 1200×1600</div>
-      <div class="reveal">
+      <div class="photo">占位：头像 / 工作照 1200×1600</div>
+      <div>
         <div class="eyebrow">背景</div>
         <h2>七年建筑，<em>七年设计。</em></h2>
         <p style="margin-top:20px">宾夕法尼亚大学建筑学硕士，利物浦大学建筑学一等荣誉学士，美国纽约州注册建筑师。建筑训练带来的系统思维与对比例、材料的敏感，现在用于品牌与产品设计。</p>
@@ -318,7 +321,7 @@ h2 em{font-style:normal;color:#8A8A96}
 
 <footer class="foot" id="contact">
   <div class="wrap">
-    <div class="cta reveal">
+    <div class="cta">
       <h2>有想法，<em>随时联系。</em></h2>
       <p>活动海报、品牌视觉、AI 产品设计，或仅是认识一下。一般 24 小时内回复。</p>
       <a class="pill" href="#contact">发邮件给我</a>
@@ -345,10 +348,13 @@ h2 em{font-style:normal;color:#8A8A96}
     if(!reduce){t+=.006;requestAnimationFrame(draw)}}
   size();addEventListener('resize',function(){size();if(reduce)draw()});draw();
 
-  /* reveal */
+  /* reveal: every element rises in as it scrolls into view, staggered within its section */
+  var SEL='.eyebrow, .head h2, .head .btns, .head > .pill, .about h2, .about .pill, .stats .lbl, .ring-wrap, .stat-card, .svc, .bio .photo, .bio h2, .bio p, .timeline li, .badges, .foot .cta > *, .foot .cols > div, .foot .end';
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.sec, .foot').forEach(function(sec){var i=0;sec.querySelectorAll(SEL).forEach(function(el){if(el.closest('.hero'))return;el.classList.add('reveal');el.style.setProperty('--d',Math.min(i*0.09,0.9)+'s');i++})});
   var els=document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -10% 0px'});
-    els.forEach(function(el){if(el.getBoundingClientRect().top<innerHeight)el.classList.add('in');else io.observe(el)})}else els.forEach(function(el){el.classList.add('in')});
+  if('IntersectionObserver' in window&&!reduce){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -12% 0px',threshold:.05});
+    els.forEach(function(el){io.observe(el)})}else els.forEach(function(el){el.classList.add('in')});
 
   /* about: connector from the label dot down to the ring */
   var stats=document.querySelector('.stats');
