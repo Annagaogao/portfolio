@@ -95,7 +95,7 @@ h2 em{font-style:normal;color:#8A8A96}
 
 /* work: horizontal gallery, cards bleed past both edges */
 .gallery{position:relative}
-.track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-inline:calc((100vw - min(64vw,1000px))/2);padding-bottom:8px;cursor:grab}
+.track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-inline:calc((100vw - min(64vw,1000px))/2);padding-block:20px 64px;margin-block:-20px -64px;cursor:grab}
 .track::-webkit-scrollbar{display:none}
 .track.drag{cursor:grabbing;scroll-snap-type:none}
 .work{flex:0 0 min(64vw,1000px);scroll-snap-align:center;background:var(--surface);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s;user-select:none}
