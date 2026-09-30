@@ -120,18 +120,18 @@ h2 em{font-style:normal;color:#8A8A96}
 
 /* services: three-column cards, image full-bleed on the right */
 .acc{display:grid;gap:20px}
-.svc{border:1px solid #23232C;border-radius:var(--r);overflow:hidden;background:#000;display:grid;grid-template-columns:1fr 1fr 1.05fr;min-height:400px}
-.svc .col1{padding:44px 40px 40px;display:flex;flex-direction:column;justify-content:space-between;gap:32px;border-right:1px solid #23232C}
-.svc h3{font-size:clamp(28px,3vw,44px);font-weight:400;letter-spacing:-.02em;line-height:1.15}
+.svc{border:1px solid #23232C;border-radius:var(--r);overflow:hidden;background:#000;display:grid;grid-template-columns:1fr 1fr 1.05fr;height:360px}
+.svc .col1{padding:40px 40px 36px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;border-right:1px solid #23232C;min-height:0}
+.svc h3{font-size:clamp(26px,2.8vw,40px);font-weight:400;letter-spacing:-.02em;line-height:1.15}
 .svc .col1 .circle{background:#fff;color:#000;border-color:#fff;width:64px;height:64px;transition:transform .25s}
 .svc .col1 .circle svg{width:22px;height:22px}
 .svc:hover .col1 .circle{transform:translate(3px,-3px)}
-.svc .col2{padding:44px 40px 40px;display:flex;flex-direction:column;justify-content:space-between;gap:32px;border-right:1px solid #23232C}
-.svc .col2 p{margin:0;font-size:17px;color:var(--on-black);line-height:1.55;max-width:22em}
+.svc .col2{padding:40px 40px 36px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;border-right:1px solid #23232C;min-height:0}
+.svc .col2 p{margin:0;font-size:16px;color:var(--on-black);line-height:1.5;max-width:22em}
 .svc .col2 .tags{justify-content:flex-start}
-.svc .col2 .tag{background:#1C1C22;border-color:#1C1C22;color:#fff;font-size:15px;padding:12px 24px}
-.svc .pic{background:linear-gradient(135deg,var(--v4),var(--v3) 60%,var(--v2));display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(255,255,255,.8);min-height:260px}
-@media (max-width:900px){.svc{grid-template-columns:1fr;min-height:0}.svc .col1,.svc .col2{border-right:0;border-bottom:1px solid #23232C;padding:28px 24px;gap:24px}.svc .col1 .circle{width:52px;height:52px}}
+.svc .col2 .tag{background:#1C1C22;border-color:#1C1C22;color:#fff;font-size:15px;padding:11px 22px}
+.svc .pic{background:linear-gradient(135deg,var(--v4),var(--v3) 60%,var(--v2));display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(255,255,255,.8);min-height:0}
+@media (max-width:900px){.svc{grid-template-columns:1fr;height:auto}.svc .col1,.svc .col2{border-right:0;border-bottom:1px solid #23232C;padding:28px 24px;gap:24px}.svc .col1 .circle{width:52px;height:52px}.svc .pic{min-height:220px}}
 
 /* method: tall cards, image on top, staggered rise on scroll, parallax image */
 .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -269,7 +269,7 @@ h2 em{font-style:normal;color:#8A8A96}
     <div class="wrap">
       <div class="head reveal" style="text-align:center;grid-template-columns:1fr;justify-items:center"><div><div class="eyebrow" style="justify-content:center">服务</div><h2>四类工作，<em>一套方法。</em></h2></div><a class="pill light" href="#contact">聊一个项目</a></div>
       <div class="acc reveal">
-        <div class="svc"><div class="col1"><h3>活动海报与<br>物料</h3><a class="circle" href="#work" aria-label="查看相关作品"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12 12 4M6 4h6v6"/></svg></a></div><div class="col2"><p>线上海报、易拉宝、Banner、推文头图及活动周边。统一视觉，多尺寸一次交付。</p><div class="tags"><span class="tag">社区活动</span><span class="tag">Hackathon</span></div></div><div class="pic">占位：海报拼贴</div></div>
+        <div class="svc"><div class="col1"><h3>活动海报<br>与物料</h3><a class="circle" href="#work" aria-label="查看相关作品"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12 12 4M6 4h6v6"/></svg></a></div><div class="col2"><p>线上海报、易拉宝、Banner、推文头图及活动周边。统一视觉，多尺寸一次交付。</p><div class="tags"><span class="tag">社区活动</span><span class="tag">Hackathon</span></div></div><div class="pic">占位：海报拼贴</div></div>
         <div class="svc"><div class="col1"><h3>品牌视觉<br>系统</h3><a class="circle" href="#work" aria-label="查看相关作品"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12 12 4M6 4h6v6"/></svg></a></div><div class="col2"><p>标志、色彩与字体系统、品牌规范、名片与印刷品。为新品牌建立完整起点。</p><div class="tags"><span class="tag">新品牌</span><span class="tag">产品线</span></div></div><div class="pic">占位：VI 应用</div></div>
         <div class="svc"><div class="col1"><h3>AI 产品<br>界面</h3><a class="circle" href="#work" aria-label="查看相关作品"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12 12 4M6 4h6v6"/></svg></a></div><div class="col2"><p>从零建立设计系统，产出高保真界面，并与研发协作落地。三年 AI 与 Web3 产品经验。</p><div class="tags"><span class="tag">设计系统</span><span class="tag">平台</span></div></div><div class="pic">占位：界面截图</div></div>
         <div class="svc"><div class="col1"><h3>官网与<br>落地页</h3><a class="circle" href="#work" aria-label="查看相关作品"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12 12 4M6 4h6v6"/></svg></a></div><div class="col2"><p>桌面与移动端视觉设计，配合前端完整还原上线。多个官网正在运行。</p><div class="tags"><span class="tag">公司官网</span><span class="tag">发布页</span></div></div><div class="pic">占位：官网截图</div></div>
