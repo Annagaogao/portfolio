@@ -8,20 +8,20 @@
 <style>
 :root{
   --bg:#F3F1EC; --surface:#FFFFFF; --ink:#17171A; --ink-2:#4B4B52; --mute:#7A7A83;
-  --line:#D9D6CE; --line-2:#E8E5DE; --accent:#2447F5; --accent-ink:#FFFFFF; --tint:#E3E8FF;
+  --line:#D9D6CE; --line-2:#E8E5DE; --accent:#17171A; --accent-ink:#F3F1EC; --tint:#E9E6DF;
   --hatch:repeating-linear-gradient(135deg,transparent 0 10px,rgba(23,23,26,.06) 10px 11px);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#121214; --surface:#1B1B1F; --ink:#EDEBE6; --ink-2:#B9B7B1; --mute:#84838C;
-    --line:#2E2E34; --line-2:#26262B; --accent:#7C93FF; --accent-ink:#0E1330; --tint:#1F2547;
+    --line:#2E2E34; --line-2:#26262B; --accent:#EDEBE6; --accent-ink:#121214; --tint:#26262B;
     --hatch:repeating-linear-gradient(135deg,transparent 0 10px,rgba(237,235,230,.07) 10px 11px);
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
   --bg:#121214; --surface:#1B1B1F; --ink:#EDEBE6; --ink-2:#B9B7B1; --mute:#84838C;
-  --line:#2E2E34; --line-2:#26262B; --accent:#7C93FF; --accent-ink:#0E1330; --tint:#1F2547;
+  --line:#2E2E34; --line-2:#26262B; --accent:#EDEBE6; --accent-ink:#121214; --tint:#26262B;
   --hatch:repeating-linear-gradient(135deg,transparent 0 10px,rgba(237,235,230,.07) 10px 11px);
   color-scheme:dark;
 }
@@ -31,8 +31,10 @@ a{color:inherit;text-decoration:none}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 img{max-width:100%;display:block}
 .wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
-.serif{font-family:"Instrument Serif","Noto Serif SC","Songti SC",Georgia,serif;font-weight:400}
-.serif em{font-style:italic;color:var(--accent)}
+.serif{font-family:"Instrument Serif","Noto Serif SC","Songti SC",Georgia,serif;font-weight:400;color:var(--ink-2)}
+.serif em{font-style:italic;color:var(--ink)}
+.contact .serif{color:color-mix(in srgb,var(--bg) 62%,transparent)}
+.contact .serif em{color:var(--bg)}
 .eyebrow{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
 h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
 
@@ -48,13 +50,17 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
 
 /* hero: 3 levels only */
 .hero{padding-block:clamp(72px,14vw,160px) clamp(56px,8vw,96px)}
-.hero h1{font-size:clamp(44px,8vw,104px);letter-spacing:-.02em;line-height:1.04;max-width:12em}
+.hero h1{font-size:clamp(44px,8vw,104px);letter-spacing:-.03em;line-height:1.02;max-width:12em}
 .hero .who{margin-top:clamp(24px,3vw,36px);font-size:clamp(15px,1.6vw,18px);color:var(--ink-2)}
 .hero .who b{color:var(--ink);font-weight:600}
 .hero .actions{margin-top:clamp(28px,4vw,44px);display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--surface);transition:transform .15s}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--surface);transition:transform .15s,opacity .15s}
 .btn:hover{transform:translateY(-1px)}
-.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.primary:hover{opacity:.85}
+.btn.text{border:0;background:transparent;padding-inline:6px;color:var(--ink)}
+.btn.text::after{content:"›";font-size:20px;line-height:1;transition:transform .15s}
+.btn.text:hover::after{transform:translateX(3px)}
 
 /* sections */
 .sec{padding-block:clamp(56px,9vw,112px);border-top:1px solid var(--line)}
@@ -75,7 +81,7 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
 .work .meta{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
 .work h3{font-size:20px;font-weight:600}
 .work .k{font-size:13px;color:var(--mute);white-space:nowrap}
-.work .k a{color:var(--accent);font-weight:600}
+.work .k a{color:var(--ink);font-weight:600}
 .work .k a::after{content:" ↗"}
 
 /* services */
@@ -83,7 +89,7 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
 @media (max-width:900px){.services{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:480px){.services{grid-template-columns:1fr}}
 .svc{background:var(--surface);padding:32px 28px;display:flex;flex-direction:column;gap:14px;min-height:240px}
-.svc .n{font-family:"Instrument Serif",serif;font-style:italic;font-size:30px;line-height:1;color:var(--accent)}
+.svc .n{font-family:"Instrument Serif",serif;font-style:italic;font-size:30px;line-height:1;color:var(--mute)}
 .svc h3{font-size:20px;font-weight:600}
 .svc p{margin:0;font-size:14.5px;color:var(--ink-2)}
 .svc .for{margin-top:auto;font-size:12.5px;color:var(--mute)}
@@ -95,13 +101,13 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
 .method p{color:var(--ink-2);max-width:30em;margin:20px 0 0}
 .stack{display:grid;gap:12px}
 .layer{display:grid;grid-template-columns:48px 1fr;gap:18px;padding:22px 24px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
-.layer .ic{width:48px;height:48px;border-radius:10px;background:var(--tint);color:var(--accent);display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:500}
+.layer .ic{width:48px;height:48px;border-radius:10px;background:var(--tint);color:var(--ink);display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:500}
 .layer b{display:block;font-weight:600;margin-bottom:4px;font-size:16px}
 .layer span{font-size:14px;color:var(--ink-2)}
 .steps{margin-top:clamp(40px,6vw,72px);display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:step}
 @media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
 .step{border-top:1px solid var(--ink);padding-top:18px}
-.step::before{counter-increment:step;content:"0" counter(step);font-family:"Instrument Serif",serif;font-style:italic;font-size:26px;color:var(--accent);line-height:1}
+.step::before{counter-increment:step;content:"0" counter(step);font-family:"Instrument Serif",serif;font-style:italic;font-size:26px;color:var(--mute);line-height:1}
 .step h4{margin:10px 0 4px;font-size:17px;font-weight:600}
 .step p{margin:0;font-size:14px;color:var(--ink-2)}
 
@@ -130,7 +136,9 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
 .row .v{font-weight:600;user-select:all}
 .row button{font-family:inherit;font-size:12px;border:1px solid rgba(255,255,255,.25);background:transparent;color:inherit;border-radius:999px;padding:5px 10px;cursor:pointer}
 .footer{padding:32px 0 48px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--mute)}
-@media (prefers-reduced-motion:reduce){.btn,.work .ph{transition:none}}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in,.no-js .reveal{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.btn,.work .ph,.reveal{transition:none}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -154,7 +162,7 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
     <p class="who"><b>高旖伟 Anna Gao</b> · Design Lead @ FLock.io / 和光科技 · 建筑师出身</p>
     <div class="actions">
       <a class="btn primary" href="#work">看作品</a>
-      <a class="btn" href="#contact">聊一个项目</a>
+      <a class="btn text" href="#contact">聊一个项目</a>
     </div>
   </section>
 
@@ -285,6 +293,11 @@ h1,h2,h3{margin:0;text-wrap:balance;line-height:1.15}
 
 <script>
 (function(){
+  var els=document.querySelectorAll('.sec .wrap > *, .hero > *');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight){return}el.classList.add('reveal');io.observe(el)});
+  }
   var chips=document.querySelectorAll('.chip'),works=document.querySelectorAll('.work');
   chips.forEach(function(c){c.addEventListener('click',function(){
     chips.forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false')});
