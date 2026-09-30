@@ -39,13 +39,13 @@ h1,h2,h3,h4{margin:0;font-weight:400;line-height:1.1;letter-spacing:-.02em;text-
 .hero .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:88px;gap:16px;min-height:0;padding-top:0}
 .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:19px;color:var(--ink)}
 .brand i{width:26px;height:26px;border-radius:7px;background:var(--black);display:inline-block;transform:skewX(-12deg)}
-.nav .loc{font-size:13px;color:var(--ink-2);text-align:center;line-height:1.4}
+.nav .loc{font-size:16px;color:var(--ink);text-align:center;line-height:1.5}
 .nav .r{display:flex;gap:8px;align-items:center}
 .nav .pill,.nav .circle{background:var(--black);color:var(--on-black)}
 @media (max-width:720px){.nav .loc{display:none}.hero .nav .wrap{height:72px}}
 
 /* hero */
-.hero{position:relative;min-height:min(92vh,880px);overflow:hidden;color:#fff;
+.hero{position:relative;min-height:100svh;overflow:hidden;color:#fff;
   background:#000 radial-gradient(2217px 844px at 50% 8px,#FFFFFF 22.9%,#EEECFF 28.4%,#DAD6FF 33.3%,#AEA6FB 40.3%,#7E72E7 46.6%,#574ABC 53%,#4236A1 56.8%,#2D2285 60.7%,#190F65 66.3%,#100852 69.5%,#07003E 72.7%,#04001F 81.3%,#020010 85.6%,#000 89.9%) no-repeat}
 .hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 .hero .veil{position:absolute;inset:0;background:radial-gradient(60% 50% at 50% 42%,rgba(255,255,255,.06),transparent 70%)}
@@ -58,15 +58,19 @@ h1,h2,h3,h4{margin:0;font-weight:400;line-height:1.1;letter-spacing:-.02em;text-
 .card-glass .b{display:flex;justify-content:space-between;align-items:end}
 .card-glass .n{font-size:38px;line-height:1;font-weight:400}
 .hero .giant{font-size:clamp(88px,15.5vw,236px);line-height:.82;font-weight:300;letter-spacing:-.04em;color:#fff;white-space:nowrap;transform:translateY(12%);margin-left:-.03em;text-shadow:0 0 60px rgba(0,0,0,.2)}
-@media (max-width:820px){.hero .mid{grid-template-columns:1fr}.hero .wrap{padding-top:100px}.hero{min-height:min(90vh,760px)}}
+@media (max-width:820px){.hero .mid{grid-template-columns:1fr}.hero .wrap{padding-top:100px}}
 
 /* sections */
-.sec{padding-block:clamp(72px,9vw,128px)}
+.sec{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-block:clamp(72px,9vw,128px);box-sizing:border-box}
+.sec > .wrap{width:100%}
 .sec.dark{background:var(--black);color:var(--on-black)}
 
 .head{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;margin-bottom:clamp(32px,4vw,56px)}
 .head h2{font-size:clamp(34px,4.6vw,64px);margin-top:18px;max-width:12em}
 h2 em{font-style:normal;color:#8A8A96}
+.head h2 .w,.about h2 .w{transition:color .25s;color:#C5C5CE}
+.dark .head h2 .w{color:#3A3A44}
+.head h2 .w.on,.about h2 .w.on{color:inherit}
 .dark h2 em{color:#7C7C88}
 .foot .cta h2 em{color:#6E6E7A}
 @media (max-width:640px){.head{grid-template-columns:1fr}}
@@ -76,12 +80,18 @@ h2 em{font-style:normal;color:#8A8A96}
 @media (max-width:900px){.about{grid-template-columns:1fr}}
 .about h2{font-size:clamp(32px,4vw,56px);margin-top:14px}
 .about .pill{margin-top:36px}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:end}
-.ring{aspect-ratio:1;max-width:220px;border-radius:50%;border:18px solid #D9D9E0;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:300;position:relative;justify-self:center;background:var(--bg)}
-.ring::after{content:"";position:absolute;inset:14px;border:1px solid var(--ink);border-radius:50%}
-.stat-card{background:var(--surface);border-radius:var(--r);padding:28px 26px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between}
-.stat-card .n{font-size:clamp(44px,5vw,64px);font-weight:300;line-height:1;letter-spacing:-.03em}
-.stat-card p{margin:0;font-size:14px;color:var(--ink-2);line-height:1.5}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,60px);align-items:end;position:relative;padding-top:90px}
+.stats .lbl{position:absolute;right:0;top:0;display:flex;align-items:center;gap:12px;font-size:15px;color:var(--ink-2);white-space:nowrap}
+.stats .lbl::before{content:"";width:12px;height:12px;border:2px solid var(--ink);border-radius:50%;background:var(--surface)}
+.stats .line{position:absolute;left:calc(25% - .5px);top:6px;width:1px;background:#C9C9D2;height:calc(90px + 12%)}
+.stats .line::before{content:"";position:absolute;left:0;top:0;height:1px;width:calc(75vw - 100%);max-width:180px;background:#C9C9D2}
+.ring{aspect-ratio:1;width:min(100%,300px);border-radius:50%;background:repeating-conic-gradient(#C9C9D2 0 2.2deg,transparent 2.2deg 6deg);-webkit-mask:radial-gradient(circle,transparent 62%,#000 63%);mask:radial-gradient(circle,transparent 62%,#000 63%);justify-self:center;position:relative}
+.ring-wrap{position:relative;justify-self:center;width:min(100%,300px);aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+.ring-wrap .in{position:absolute;inset:16%;border-radius:50%;border:1px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:clamp(36px,3.6vw,52px);font-weight:300;letter-spacing:-.02em}
+.stat-card{background:var(--surface);padding:44px 40px;min-height:470px;display:flex;flex-direction:column;justify-content:space-between}
+.stat-card .n{font-size:clamp(56px,6vw,88px);font-weight:300;line-height:1;letter-spacing:-.03em}
+.stat-card p{margin:0;font-size:17px;color:var(--ink-2);line-height:1.5}
+@media (max-width:640px){.stats{grid-template-columns:1fr;padding-top:60px}.stats .line{display:none}.stat-card{min-height:320px}}
 
 /* work: horizontal gallery, cards bleed past both edges */
 .gallery{position:relative}
@@ -231,8 +241,10 @@ h2 em{font-style:normal;color:#8A8A96}
         <a class="pill" href="#about">了解更多</a>
       </div>
       <div class="stats reveal">
-        <div class="ring">10+</div>
-        <div class="stat-card"><div class="n">8</div><p>精选项目，含 3 个已上线网站与平台</p></div>
+        <div class="lbl">年设计训练，建筑到品牌与产品</div>
+        <div class="line"></div>
+        <div class="ring-wrap"><div class="ring"></div><div class="in">10+</div></div>
+        <div class="stat-card"><div class="n">8</div><p>精选项目，覆盖 AI 产品、品牌与活动视觉，其中 3 个已上线</p></div>
       </div>
     </div>
   </section>
@@ -335,6 +347,11 @@ h2 em{font-style:normal;color:#8A8A96}
   var els=document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -10% 0px'});
     els.forEach(function(el){if(el.getBoundingClientRect().top<innerHeight)el.classList.add('in');else io.observe(el)})}else els.forEach(function(el){el.classList.add('in')});
+
+  /* section titles: characters turn from grey to ink as the title scrolls up the screen */
+  var heads=[];document.querySelectorAll('.head h2, .about h2').forEach(function(h){var out='';h.childNodes.forEach(function(n){if(n.nodeType===3){out+=n.textContent.split('').map(function(c){return c.trim()?'<span class="w">'+c+'</span>':c}).join('')}else if(n.tagName==='EM'){out+='<em>'+n.textContent.split('').map(function(c){return c.trim()?'<span class="w">'+c+'</span>':c}).join('')+'</em>'}else out+=n.outerHTML});h.innerHTML=out;heads.push([h,h.querySelectorAll('.w')])});
+  function wr(){heads.forEach(function(x){var r=x[0].getBoundingClientRect(),p=(innerHeight*.85-r.top)/(innerHeight*.45);p=Math.max(0,Math.min(1,p));var k=Math.round(p*x[1].length);x[1].forEach(function(w,i){w.classList.toggle('on',i<k)})})}
+  addEventListener('scroll',wr,{passive:true});addEventListener('resize',wr);wr();
 
   /* method tiles: staggered rise, then image parallax on scroll */
   var tiles=document.getElementById('tiles'),arts=tiles?tiles.querySelectorAll('.art > div'):[];
