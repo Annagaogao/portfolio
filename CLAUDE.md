@@ -35,7 +35,7 @@
 
 ## 占位图替换
 
-`index.html` 里凡是 `class="img"`、`class="pic"`、`class="art"`、`class="photo"` 的占位块，换成 `<img src="images/xxx.jpg" alt="…">` 即可（保留外层容器和 class）。图片放 `images/`，命名 `项目-序号.jpg`，网站用 JPG 80%、长边 2400px。
+`index.html` 里凡是 `class="img"`、`class="pic"`、`class="art"`、`class="photo"` 的占位块，换成 `<img src="images/xxx.jpg" alt="…">` 即可（保留外层容器和 class）。图片放 `images/` 下对应的项目文件夹，文件名按该文件夹 README 里的规定（如 `images/01-flock-web/cover.jpg`），网站用 JPG 80%、长边 2400px。
 
 ## 其他
 
