@@ -2,7 +2,7 @@
 
 个人作品集网站与配套物料。
 
-- `index.html` — 作品集网站（单页，静态，图片为占位）。直接双击打开，或部署到 GitHub Pages / Vercel。
+- `index.html` — 作品集网站（单文件，无构建）。双击打开预览，推到 main 自动发布。项目说明见 `CLAUDE.md`。
 - `collateral/anna-card.html` → `anna-card.png` — 个人名片长图（微信直发）
 - `collateral/andlight-onepager.html` → `andlight-onepager.pdf` — 和光科技产品一页纸
 - `collateral/render.mjs` — 用 Playwright 把上面两个 HTML 出图/出 PDF：`node collateral/render.mjs collateral`
